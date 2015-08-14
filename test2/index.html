@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap/css/bootstrap.css"/>
+    <script type="text/javascript" src="../lib/angular-1.4.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</head>
+<body ng-app="app">
+    <br/>
+    <br/>
+    <br/>
+
+   <div ng-controller="UserController" class="container">
+        <ul ng-transclude="">
+            <li ng-repeat="l in '{{listName}}'">{{l.name}}</li>
+        </ul>
+   </div>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<tr ng-class="{true: 'warning'}[st.selected]" ng-click="initSelectTr($index)">
+    <td>
+       <select class="form-control input-sm"
+               ng-change = "change(st);"
+               ng-model="st.dept"
+               ng-options="o.value as o.name for o in depts">
+       </select>
+    </td>
+    <td>
+        <input type="text"
+               tui-max-length="{'ssssA':'2','B':'2','C':'3'}[st.dept]"
+               class="form-control input-sm"
+               name="id"
+               ng-model="st.id"
+               placeholder="请输入学号"/>
+    </td>
+    <td>
+        <input type="text"   class="form-control input-sm" name="name" ng-model="st.name" placeholder="请输入名称"/>
+    </td>
+    <td>
+        <input type="text" class="form-control input-sm" name="add" ng-model="st.addr" placeholder="请输入地址" />
+    </td>
+    <td>
+        <input type="text" class="form-control input-sm" name="phone" ng-model="st.phone" placeholder="请输入名称" />
+    </td>
+</tr>
