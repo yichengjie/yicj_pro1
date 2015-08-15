@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="form/css/validateStyle.css" />
+    <script type="text/javascript" src="../lib/jquery.js"></script>
+    <script type="text/javascript" src="validationEngine-cn.js"></script>
+    <script type="text/javascript" src="form/js/validationEngine.js"></script>
+    <script type="text/javascript" src="form/js/tooltip_split.js"></script>
+    <script type="text/javascript" src="form/js/formLayout_split.js"></script>
+    <script type="text/javascript" src="form/js/textinput_split.js"></script>
+
+    <script type="text/javascript">
+        function submitMyForm (){
+            var access=true;
+            // access=$('#queryform').validationEngine({returnIsValid:true});
+            alert(access) ;
+        }
+
+        function addLine (){
+            var str = '<input type="text" name="add_password" id="add_password" ' +
+                    'class="form-control validate[required,length[1,50]]" >' ;
+            $('#queryform').append(str) ;
+        }
+
+    </script>
+</head>
+<body>
+
+<div class="container" style="padding-top: 100px;">
+    <form name="queryform" id="queryform" method="post" action="CustPrivateDataManageOper.jsp">
+
+        <input type="text" name="add_CustName" id="add_CustName"
+               class="form-control validate[optional,custom[myGoogCharacter],length[0,50]]"><br/>
+
+        <input type="text" name="add_name" id="add_name"
+               class="form-control validate[required,custom[myGoogCharacter],length[1,50]]" ><br/>
+
+    </form>
+
+
+
+    <br/>
+    <br/>
+    <button onclick="addLine();">添加一行</button>
+
+    <button type="button" onclick="submitMyForm();">提交</button>
+</div>
+
+</body>
+</html>

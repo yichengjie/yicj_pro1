@@ -8,6 +8,8 @@ app.constructor('UserController',function($scope){
 }) ;
 
 app.config(function($stateProvider) {
+
+    //$stateProvider.when('/','main.sub') ;
     $stateProvider
     .state('main',{
         url: '/main',

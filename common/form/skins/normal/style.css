@@ -1,0 +1,556 @@
+/*基本表格样式*/
+.tableStyle{
+ 	border-collapse: collapse;
+	BORDER: 1px solid #a0b0c8;
+	background-color: White;
+	font-size: 12px;
+}
+.box2{
+	border:solid 1px #a0b0c8;
+	margin:0px;	
+	BACKGROUND-IMAGE: url(/nms/Common/Img/form_bg.gif); BACKGROUND-REPEAT: repeat-y;
+}
+.float_left{
+	float:left;
+}
+/*表单分组样式*/
+fieldset { 
+	margin: 0 10px 0px 10px; 
+	>margin:0;
+	padding: 10px; 
+	border: #C8C8FF 1px solid;
+}
+
+legend { 
+	font-weight: bold; 
+	color: #000099; 
+}
+/*表单分组样式*/
+
+/*文本框样式*/
+.textinput{
+	font-size: 12px;
+	border-color:#a2b3bd;
+	border-style:solid;
+	border-width:1px;
+	color:#000000;
+	height: 18px;
+	line-height: 18px;
+	width:200px;
+}
+.textinput_hover{
+	font-size: 12px;
+	border-color:#44A2FF;/*鼠标移入边框颜色*/
+	border-style:solid;
+	border-width:1px;
+	color:#000000;
+	height: 18px;
+	line-height: 18px;
+	width:200px;
+}
+.textinput_click{
+	font-size: 12px;
+	border-color:#fbd45c;
+	border-style:solid;
+	border-width:1px;
+	color:#000000;
+	height: 18px;
+	line-height: 18px;
+	width:200px;	
+}
+/*文本框样式*/
+
+/*文本域样式*/
+.textarea{
+	overflow: auto;
+	width: 250px;
+	height: 80px;
+	color: #000000;
+	border-color:#a2b3bd;
+	border-style:solid;
+	border-width:1px;
+	font-size:12px;
+}
+.textarea_hover{
+	overflow: auto;
+	width: 250px;
+	height: 80px;
+	color: #000000;
+	border-color:#00ccff;/*鼠标移入边框颜色*/
+	border-style:solid;
+	border-width:1px;
+	font-size:12px;
+}
+.textarea_click{
+	overflow: auto;
+	width: 250px;
+	height: 80px;
+	color: #000000;
+	border-color:#fbd45c;
+	border-style:solid;
+	border-width:1px;
+	font-size:12px;
+}
+/*文本域样式*/
+
+/*文本框清除文字*/
+div.text_clear_button {  width:11px; height:11px; margin:0; padding:0; background-repeat:no-repeat;
+  z-index:2; position:absolute; cursor:pointer; }
+/*文本框清除文字*/  
+  
+ /*文本框输入限制*/
+.maxNum{
+	color:black;
+}
+ /*文本框输入限制*/
+
+ /*文本域尺寸可调*/
+div.grippie {
+	background:#EEEEEE url(form/grippie.png) no-repeat scroll center 2px;
+	border-color:#DDDDDD;
+	border-style:solid;
+	border-width:0pt 1px 1px;
+	cursor:s-resize;
+	height:9px;
+	overflow:hidden;
+	
+}
+.resizable-textarea{
+	width:100px;
+}
+ /*文本域尺寸可调*/
+
+ /*密码强度*/
+.password_strength {
+	padding: 0 5px;
+	display: inline-block;
+	}
+.password_strength_1 {
+	background-color: #fcb6b1;
+	}
+.password_strength_2 {
+	background-color: #fccab1;
+	}
+.password_strength_3 {
+	background-color: #fcfbb1;
+	}
+.password_strength_4 {
+	background-color: #dafcb1;
+	}
+.password_strength_5 {
+	background-color: #bcfcb1;
+	}
+ /*密码强度*/
+
+ /*水印*/
+.watermark {color:#999!important;}
+ /*水印*/
+
+#cursorMessageDiv {
+	position: absolute;
+	z-index: 99999;
+	border: solid 1px #cc9933;
+	background: #ffffcc;
+	padding: 2px;
+	margin: 0px;
+	display: none;
+}
+
+/*滚动条样式*/
+html{
+	scrollbar-face-color: #DDEEFF; /*主色调*/
+	scrollbar-highlight-color: #FFFFFF; 
+	scrollbar-shadow-color: #99BBCC; /*描边颜色*/
+	scrollbar-3dlight-color: #AACCDD; /*左侧边高光颜色*/
+	scrollbar-arrow-color: #6688AA; /*小三角颜色*/
+	scrollbar-track-color: #EEEEEE; 
+	scrollbar-darkshadow-color: #DDEEFF; 
+}
+/*滚动条样式*/
+
+/*单选下拉框样式*/
+.mainCon{
+	position: relative;
+	display: inline;
+	z-index: 500;
+	_width:100px;
+}
+div.selectbox-wrapper {
+	border:#4AA5FF 1px solid;  /*展开层边框色*/
+	position: absolute; 
+	background-color:#fff; 
+	text-align:left;
+	z-index: 100;
+	display:block;
+	left:0px;
+	top:18px;
+	>top:25px;
+}
+div.selectbox-wrapper ul li.selected {
+	background-color: #DFF4FF;/*选中项背景色*/
+	list-style-type:none;
+}
+div.selectbox-wrapper ul li.current {
+	color: #fff;
+	list-style-type:none;
+	background-color: #4AA5FF;/*鼠标移入项背景色*/
+}
+ div.selectbox-wrapper ul{
+	margin:0; 
+	padding:0; 
+}
+div.selectbox-wrapper ul li.group{
+	font-weight:bold;
+	text-align:left;
+	background-image:url(form/selArr.gif);
+	background-repeat:no-repeat;
+	background-position:0% 50%;
+	padding-left:15px;
+	_width:80%;
+
+}
+div.selectbox-wrapper ul li {
+	cursor:pointer;
+	cursor:hand;
+	line-height:22px;
+	_width:100%;
+	margin:0; 
+	padding:0 0 0 10px; 
+	list-style-type:none;
+	text-align:left;
+}
+.selectbox { 
+	border:none;  
+	cursor: pointer;  
+	cursor: hand;
+	font-size: 12px;
+	HEIGHT: 20px; 
+	line-height: 20px;
+	border-left: solid 1px #cccccc;
+	border-top: solid 1px #cccccc;
+	border-bottom: solid 1px #cccccc;
+	background-repeat: repeat-x;
+	background-color:#FFFFFF;
+	padding-left: 4px;
+	min-width:30px;
+}
+.tipColor{
+	color:gray;
+}
+.selBtn{
+	background-image: url(form/selBtn.jpg);
+	width: 20px;
+	height: 24px;
+	border: 0;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	cursor: hand;
+	padding: 4px 0 4px 0;
+	border-bottom:solid 1px #bdcfde;
+    *border-bottom:0;
+    _border-bottom:0;
+}
+.selBtn_safari{
+	background-image: url(form/selBtn.jpg);
+	width: 20px;
+	height: 24px;
+	border: 0;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	cursor: hand;
+	padding: 0;
+	border-bottom:solid 1px #bdcfde;
+}
+.selBtn_linux{
+	background-image: url(form/selBtn.jpg);
+	width: 20px;
+	height: 24px;
+	border: 0;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	cursor: hand;
+	padding: 1px 0 8px 0;
+}
+.loader{
+	position:absolute;
+	z-index:500;
+	left:0px;
+	top:-8px;
+	padding-left:5px;
+	padding-top:3px;
+	>padding-top:8px;
+	width:100%;
+	height:30px;
+	-moz-opacity:0.8;opacity:.80;filter:alpha(opacity=80);
+	background-color:white;
+}
+.li_left{
+	float:left;
+}
+.mainCon .inputDisabled{
+	background-color:#eeeeee!important;
+	background-image:none!important;
+	color:#c0bfbf!important;
+	cursor: default!important;
+}
+.selBtn_disabled{
+	background-image: url(form/selBtn_disabled.jpg)!important;
+	cursor: default!important;
+}
+/*单选下拉框样式*/
+.img_light{
+	background-image: url(form/light.gif);
+	background-repeat: no-repeat;
+	width: 20px;
+	height: 16px;
+	display: block;
+}
+/*多选下拉框样式*/
+.jquery_rgbmultiselect_input
+{ 
+  color: black;
+  background-color: #ffffff;
+  background-image: url(form/multiSelBtn.jpg);
+  background-repeat: no-repeat;
+  background-position: center right;
+  border:solid 1px #a2b3bd;/*边框颜色*/
+  height:22px;
+  line-height:22px;
+ }
+.jquery_rgbmultiselect_options_container
+{ 
+  text-align: left;
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  height: auto;
+  border: 1px solid #4AA5FF;/*下拉容器边框颜色*/
+  font-size: 12px;
+  margin: 0;
+  padding: 0 2px;
+  background-color: white;
+  z-index: 600;
+ }
+.jquery_rgbmultiselect_options_selected_item
+{ 
+  background-color: #DFF4FF;/*选中项颜色*/
+  border: 1px solid #DFF4FF;/*选中项颜色*/
+  color: black;
+  cursor:pointer;
+ }
+.jquery_rgbmultiselect_options_item_hovered
+{ 
+  color: white;
+  border: 1px solid #4AA5FF;/*鼠标移入项颜色*/
+  background-color: #4AA5FF;/*鼠标移入项颜色*/
+  cursor:pointer;
+ }
+/*多选下拉框样式*/
+
+/*信息提示*/
+.tooltip{
+	width: 200px; 
+	color:#000;
+	font-size: 12px;
+	text-decoration:none;
+	text-align:left;
+	display:block;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+.tooltip_min{
+	width: 80px; 
+	color:#000;
+	font-size: 12px;
+	text-decoration:none;
+	text-align:center;
+	display:block;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+.tooltip_mid{
+	width: 130px; 
+	color:#000;
+	font-size: 12px;
+	text-align:left;
+	text-decoration:none;
+	text-align:center;
+	display:block;
+	word-wrap: break-word;
+	word-break: break-all;
+}
+.tooltip .top{
+	padding: 30px 8px 0;
+    background: url(form/bt.gif) no-repeat top;
+	display:block;
+}
+.tooltip .bottom{
+	padding:3px 8px 15px;
+	color: #548912;
+    background: url(form/bt.gif) no-repeat bottom;
+	display:block;
+}
+.tooltip_min .top{
+	padding: 25px 8px 0;
+    background: url(form/bt_min.gif) no-repeat top;
+	display:block;
+}
+.tooltip_min .bottom{
+	padding:3px 8px 5px;
+	color: #548912;
+    background: url(form/bt_min.gif) no-repeat bottom;
+	display:block;
+}
+.tooltip_mid .top{
+	padding: 25px 8px 0;
+	text-align:left;
+	line-height:150%;
+    background: url(form/bt_mid.gif) no-repeat top;
+	display:block;
+}
+.tooltip_mid .bottom{
+	padding:3px 8px 5px;color: #548912;
+	text-align:left;
+	line-height:150%;
+    background: url(form/bt_mid.gif) no-repeat bottom;
+	display:block;
+}
+
+#cursorMessageDiv {
+	position: absolute;
+	z-index: 99999;
+	border: solid 1px #cc9933;
+	background: #ffffcc;
+	padding: 2px;
+	margin: 0px;
+	display: none;
+}
+
+/*信息提示*/
+
+/*上传控件样式*/
+.file{
+	width:200px;
+	height:25px;
+}
+.file-container{
+	display:inline;
+}
+
+/*上传控件样式*/
+
+
+
+/*日期控件样式*/
+.date{
+	background-color:#ffffff;
+	border-color:#a2b3bd;
+	background-image: url(form/datePicker.gif)!important;
+	background-repeat: no-repeat!important;
+	background-position: 100% 50%!important;
+	height:18px;
+    |
+	border-style:solid;
+	border-width:1px;
+	font-size: 12px;
+	color: #336699;
+}
+.date_hover{
+	border-color:#00ccff!important;/*鼠标移入边框颜色*/
+}
+.date_click{
+	border-color:#fbd45c!important;
+}
+.cusDate{
+	background-color: #ffffff;
+	background-image: url(form/datePicker.gif);
+	background-repeat: no-repeat;
+	background-position: 100% 50%;
+	height:18px;
+    |
+	border-color:#cccccc;
+	border-style:solid;
+	border-width:1px;
+	font-size: 12px;
+	color: #336699;
+}
+/*日期控件样式*/
+
+ /*自动完成*/
+.hintbox_list_container ul {
+	background-color: #FFFFFF;
+	width: 200px; 
+	padding: 0;
+	margin: 0;
+	border: 1px solid #4AA5FF;
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+}
+
+.hintbox_list_container ul li {
+	line-height: 16px;
+	margin: 0;
+	padding: 1px 1px 1px 3px;
+	border: 0;
+}
+.hintbox_loading {
+	background: url(/nms/Common/Img/ajaxloader.gif) no-repeat center right!important;
+	background-color:white!important;
+}
+ /*自动完成*/
+
+.color{
+	background-color: #ffffff;
+	background-image: url(form/color.jpg);
+	background-repeat: no-repeat;
+	background-position: 100% 50%;
+	height:18px;
+    width:120px;
+	border-color:#cccccc;
+	border-style:solid;
+	border-width:1px;
+	font-size: 12px;
+	color: #336699;
+}
+/*双向选择器*/
+.listerHover{
+	background-color:#aad1f6;/*鼠标移入颜色*/
+	cursor:default;
+	margin-left:1px;
+}
+ul.lister li{
+	height:24px;
+	line-height:24px;
+}
+div.listerLinksLeft{
+	float:left;
+}
+
+div.listerLinksRight{
+	float:left;
+}
+.left,.right{
+	color:#0689d4;/*箭头颜色*/
+}
+ul.lister{
+	list-style:none;
+	text-align:left;
+	border:1px solid #67b1f3;/*边框色*/
+	padding:10px;
+	margin:0;
+	overflow:auto;
+	margin-top:5px;
+	font-weight:normal;
+	display:block;
+	background-image: url(form/selListBg.jpg);
+	background-repeat: repeat-x;
+	background-position:0% 100%;
+	background-color:white;
+}
+.clear{
+	clear:both;
+	line-height:1px;
+}
+/*双向选择器*/
