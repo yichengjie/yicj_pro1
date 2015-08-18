@@ -53,8 +53,72 @@ app.controller('IndexController',function($scope){
         st.phone = "" ;
     }
 
-}) ;
+    /*initTable() ;
 
+
+    function initTable (){
+        if($scope.stList.length>0){//则显示表格
+            $scope.showTableFlag = true ;
+            $scope.showTableTitle = "hide table" ;
+        }else{
+            $scope.showTableFlag = false ;
+            $scope.showTableTitle = "show table" ;
+        }
+    }
+
+
+    $scope.showHideTable = function () {
+        $scope.showTableFlag = !$scope.showTableFlag;
+        if($scope.showTableFlag){
+            $scope.showTableTitle = "hide table" ;
+        }else{
+            $scope.showTableTitle = "show table" ;
+        }
+    }*/
+
+
+
+
+}) ;//controller结束
+
+
+
+
+
+app.directive('showHideTable',function(){
+    return {
+        restrict: 'AE',
+        replace: true,
+        scope: true, // 这个必须加上要不然会造成混乱
+        controller:function($scope,$element,$attrs){
+            var length = $scope.$eval($attrs.tlength+'.length') ;
+            $scope.title = "show table" ;
+            $scope.showFlag = false;
+            if(length>0){
+                $scope.title = "hide table" ;
+                $scope.showFlag = true;
+            }
+            $scope.showHideTable = function(){
+                $scope.showFlag = !$scope.showFlag ;
+                if($scope.showFlag){//如果当前为显示状态
+                    $scope.title = "hide table" ;
+                }else{
+                    $scope.title = "show table" ;
+                }
+            }
+        },
+        template: '<div>' +
+                      '<button ng-click="showHideTable();">{{title}}</button>' +
+                      '<br/><br/>' +
+                      '<div ng-show = "showFlag" ng-transclude=""></div>' +
+                  '</div>',
+        transclude:true,
+        link: function(scope, element, attrs){
+
+        }
+    }
+}) ;
+//
 
 app.directive('tableInfo',function(){
     return {
@@ -93,16 +157,15 @@ app.directive('tuiMaxLength',function(){
             //scope.$watch(attrs['tuiMaxLength'], myWatchCallbackFunc, true);
             scope.$watch(attrs['tuiMaxLength'], myWatchCallbackFunc);
             function myWatchCallbackFunc (){
-                console.info('***********************') ;
                 var tuiMaxLength = attrs['tuiMaxLength'] ;
                 var info =  splitMaxLengtAttr(tuiMaxLength) ;
                 var value2  = scope.$eval(info.str2) ;
                 var valueAttrStr = "info.str1['"+value2+"'] ";
                 var valueAtrr = eval(valueAttrStr) ;
-                console.info('---------------------') ;
-                console.info('valueAtrr : ' + valueAtrr) ;
-                console.info('value2 : ' + value2) ;
-                console.info('---------------------') ;
+                //console.info('---------------------') ;
+                //console.info('valueAtrr : ' + valueAtrr) ;
+                //console.info('value2 : ' + value2) ;
+                //console.info('---------------------') ;
                 //element.attr('maxLength',valueAtrr) ;//设置长度
                 if(valueAtrr){
                     element.removeAttr('readonly') ;
@@ -124,7 +187,7 @@ app.directive('tuiMaxLength',function(){
                 var start2 = tuiMaxLengthStr.indexOf('[') ;
                 var end2 = tuiMaxLengthStr.indexOf(']') ;
                 var str2 = tuiMaxLengthStr.substring(start2+1,end2) ;
-                console.info(str1) ;
+                //console.info(str1) ;
                 obj.str1 = strToJson(str1);
                 obj.str2 = str2 ;
                 return obj ;
