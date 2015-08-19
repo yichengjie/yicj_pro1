@@ -91,7 +91,8 @@ app.directive('showHideTable',function(){
         replace: true,
         scope: true, // 这个必须加上要不然会造成混乱
         controller:function($scope,$element,$attrs){
-            var length = $scope.$eval($attrs.tlength+'.length') ;
+            var length = $scope.$eval($attrs.list+'.length') ;
+            console.info(length) ;
             $scope.title = "show table" ;
             $scope.showFlag = false;
             if(length>0){
