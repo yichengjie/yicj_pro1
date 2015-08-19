@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap/css/bootstrap.css"/>
+    <script type="text/javascript" src="../lib/angular-1.4.js"></script>
+    <script type="text/javascript" src="..//lib/angular-ui-router.js"></script>
+
+</head>
+<body ng-app="myApp">
+
+    <div ng-controller="IndexController" class="container" style="padding-top: 100px;">
+        <input type="text" ng-model="key" />
+        <ul>
+            <li ng-repeat="l in userList | myFilter:key "><h3>{{l.name}}</h3></li>
+        </ul>
+
+    </div>
+
+
+
+</body>
+<script type="text/javascript" src="index.js"></script>
+</html>
