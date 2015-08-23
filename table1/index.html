@@ -23,7 +23,7 @@
     <div ng-controller="IndexController" class="container" >
         <div class="row">
             <div class="col-sm-10">
-               <show-hide-table tlength = "stList">
+               <show-hide-table tlength = "{{stList.length}}">
                    <table-info>
                        <tr-info ng-repeat="st in stList"></tr-info>
                    </table-info>
@@ -31,16 +31,6 @@
             </div>
         </div>
 
-
-        <div class="row">
-            <div class="col-sm-10">
-                <show-hide-table tlength = "stList">
-                    <table-info>
-                        <tr-info ng-repeat="st in stList"></tr-info>
-                    </table-info>
-                </show-hide-table>
-            </div>
-        </div>
 
         <div class="row">
             <div class="col-sm-10">
@@ -61,6 +51,12 @@
                 <button   class = "btn delLine" ng-click="delLine();">删除一行</button>
             </div>
         </div>
+
+
+
+
+
+
     </div>
 
 

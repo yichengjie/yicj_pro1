@@ -89,9 +89,11 @@ app.directive('showHideTable',function(){
     return {
         restrict: 'AE',
         replace: true,
-        scope: true, // 这个必须加上要不然会造成混乱
+        scope: {
+            tlength:'@'
+        }, // 这个必须加上要不然会造成混乱
         controller:function($scope,$element,$attrs){
-            var length = $scope.$eval($attrs.tlength+'.length') ;
+            var length = $scope.tlength || 0 ;
             $scope.title = "show table" ;
             $scope.showFlag = false;
             if(length>0){
