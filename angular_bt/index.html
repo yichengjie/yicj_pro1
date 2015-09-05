@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="../bower_components/angular-motion/dist/angular-motion.css"/>
+    <script type="text/javascript" src="../lib/angular-1.4.js"></script>
+    <script  type="text/javascript" src="../bower_components/ngAnimate/js/angular-animate.min.js"></script>
+    <script type="text/javascript" src="../lib/angular-strap.js"></script>
+    <script type="text/javascript" src="../lib/angular-strap.tpl.js"></script>
+</head>
+<body ng-app="app">
+    <div class="container" style="padding-top: 100px;" ng-controller="IndexController">
+        <button type="button" class="btn btn-lg btn-primary"
+                data-animation="am-fade-and-scale"
+                data-placement="center"
+                bs-modal="modal">
+            Click to toggle modal<br>
+            <small>(using an object)</small>
+        </button>
+
+        <button type="button" class="btn btn-success"
+                data-animation="am-slide-bottom" data-placement="center"
+                bs-modal="modal">modal from bottom<br>
+                <small>(am-slide-bottom)</small>
+        </button>
+
+        <button type="button" class="btn btn-primary" data-animation="am-slide-left"
+                data-placement="left" bs-aside="aside">
+            aside from left<br><small>(slide-left)</small>
+        </button>
+    </div>
+</body>
+<script type="text/javascript" src="index.js"></script>
+</html>

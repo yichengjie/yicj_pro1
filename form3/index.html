@@ -67,7 +67,6 @@
             </div>
             <div class="col-md-8">
                 <input type="number" id="age" name="age" ng-model="user.age" class="form-control" />
-
                         <span class="glyphicon glyphicon-ok form-control-feedback"
                               ng-show="myForm.age.$dirty && myForm.age.$valid"></span>
             </div>
@@ -87,7 +86,19 @@
         </div>
     </form>
 </div>
-<div class="col-md-12">
+<div class="col-md-8">
+    <form role="form"  class="form-horizontal" novalidate>
+        <div class="form-group  has-feedback">
+            <div class="col-md-4">
+                <label for="maxlength">3.最大长度=20</label>
+            </div>
+            <div class="col-md-8">
+                <input type="text" id="maxlength" name="maxlength" ng-model="user.maxlength" ng-maxlength="20" class="form-control" />
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+            </div>
+        </div>
+    </form>
+</div>
 
 </body>
 <script type="text/javascript" src="index.js"></script>

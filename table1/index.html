@@ -22,12 +22,8 @@
 
     <div ng-controller="IndexController" class="container" >
         <div class="row">
-            <div class="col-sm-10">
-<<<<<<< HEAD
-               <show-hide-table tlength = "{{stList.length}}">
-=======
-               <show-hide-table list = "stList">
->>>>>>> 7f40b376a2e854c3980878200064e1f398d73560
+            <div class="col-sm-5">
+               <show-hide-table tlength = "{{stList.length}}" >
                    <table-info>
                        <tr-info ng-repeat="st in stList"></tr-info>
                    </table-info>
@@ -35,22 +31,8 @@
             </div>
         </div>
 
-
         <div class="row">
-            <div class="col-sm-10">
-<<<<<<< HEAD
-=======
-                <show-hide-table list = "stList">
-                    <table-info>
-                        <tr-info ng-repeat="st in stList"></tr-info>
-                    </table-info>
-                </show-hide-table>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-10">
->>>>>>> 7f40b376a2e854c3980878200064e1f398d73560
+            <div class="col-sm-5">
                 <div class="panel panel-warning" ng-show="stList.length==0">
                     <div class="panel-heading">
                         <h3 class="panel-title">提示信息</h3>
@@ -68,10 +50,6 @@
                 <button   class = "btn delLine" ng-click="delLine();">删除一行</button>
             </div>
         </div>
-
-
-
-
 
 
     </div>

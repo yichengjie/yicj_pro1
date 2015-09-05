@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap/css/bootstrap.css"/>
+    <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="../bower_components/at-table/dist/angular-table.js"></script>
+</head>
+<body ng-controller="IndexController">
+<table at-table at-list="people" class="table table-striped">
+    <thead></thead>
+    <tbody>
+    <tr>
+        <td at-implicit at-attribute="name"></td>
+        <td at-implicit at-attribute="age"></td>
+        <td at-implicit at-attribute="birthdate"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+<script type="text/javascript" src="index.js"></script>
+</html>

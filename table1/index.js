@@ -3,6 +3,10 @@ var app = angular.module("app",[]) ;
 app.controller('IndexController',function($scope){
     $scope.name = "yicj" ;
 
+
+
+
+
     $scope.depts = [{'name':'','value':''},
                     {'name':'dept1','value':'A'},
                     {'name':'dept2','value':'B'},
@@ -12,6 +16,10 @@ app.controller('IndexController',function($scope){
         {'dept':'A','id':'001','name':'yicj1','addr':'hennan1','phone':'10001','selected':false},
         {'dept':'C','id':'002','name':'yicj2','addr':'hennan2','phone':'10002','selected':false}
     ] ;
+
+
+    var ccc = angular.copy($scope.depts) ;
+    console.info(ccc) ;
 
     $scope.selectLineNum = 0 ;
 
@@ -93,12 +101,7 @@ app.directive('showHideTable',function(){
             tlength:'@'
         }, // 这个必须加上要不然会造成混乱
         controller:function($scope,$element,$attrs){
-<<<<<<< HEAD
             var length = $scope.tlength || 0 ;
-=======
-            var length = $scope.$eval($attrs.list+'.length') ;
-            console.info(length) ;
->>>>>>> 7f40b376a2e854c3980878200064e1f398d73560
             $scope.title = "show table" ;
             $scope.showFlag = false;
             if(length>0){
