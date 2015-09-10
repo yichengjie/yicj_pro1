@@ -25,7 +25,7 @@ define(function(require, exports, module){
         } ;
     }) ;
 
-    directives.directive('tbAdd', ['$compile',function ($compile) {
+    directives.directive('tbAdd', ['$compile','SelectListData',function ($compile,SelectListData) {
         return {
             restrict: 'E',
             replace: true,
@@ -35,6 +35,7 @@ define(function(require, exports, module){
             },
             template:tbAddButtonHtml,
             link: function(scope, element, attrs) {
+                scope.selectList = SelectListData ;
                 var title = scope.title ||"标题" ;
                 scope.title = title ;
                 scope.rowData = {type: "", code: "", money: "", unin: "CNY"} ;
@@ -57,7 +58,7 @@ define(function(require, exports, module){
         };
     }]) ;
 
-    directives.directive('tbUpdate',['$compile', function ($compile) {
+    directives.directive('tbUpdate',['$compile','SelectListData', function ($compile,SelectListData) {
         return {
             restrict: 'E',
             replace: true,
@@ -68,10 +69,12 @@ define(function(require, exports, module){
             },
             template:tbUpdateButtonHtml,
             link: function(scope, element, attrs) {
+                scope.selectList = SelectListData ;
                 var title = scope.title ||"标题" ;
                 scope.title = title ;
                 var tplStr = attrs['tpl'] ;
                 element.bind('click', function () {
+
                     scope.rowData = angular.copy(scope.obj) ;
                     var template = _.template(tbRowHtml);
                     var compileStr = template({value: tplStr});

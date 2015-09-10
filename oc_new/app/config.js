@@ -1,6 +1,6 @@
 // Set configuration
 seajs.config({
-	base : '/angular_demo/oc_new/seajs-modules',
+	base : '/yicj_pro1/oc_new/seajs-modules',
 	alias : {
 		'jquery' : 'jquery/jquery/1.10.1/jquery-1.8.2.js',
 		'angular':'angular/angularjs/1.4.3/angular.js',
@@ -16,6 +16,6 @@ seajs.config({
 	debug: true
 });
 
-seajs.use('/angular_demo/oc_new/app/edit/bootstrap',function(app){
+seajs.use('/yicj_pro1/oc_new/app/edit/bootstrap',function(app){
 	app.init() ;
 });

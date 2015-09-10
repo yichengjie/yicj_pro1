@@ -8,7 +8,6 @@ define(function(require, exports, module) {
             template: function (element, attrs) {
                 var str = attrs['name'] ;
                 var retStr = str+".$invalid&&"+str+".$dirty" ;
-                console.info('retStr :' + retStr) ;
                 var inputValidHtml = "<span class=\"glyphicon  form-control-feedback\"ng-class=\"{true:'glyphicon-remove'}["+retStr+"]\" aria-hidden=\"true\"></span>" ;
                 return inputValidHtml ;
             },
@@ -39,22 +38,15 @@ define(function(require, exports, module) {
             require:'ngModel',
             link:function(scope,element,attrs,ngModel){
                 if (!ngModel)
-                    return; // do nothing if no ng-model
-                ngModel.$render = function() {
-                    var tmp = ngModel.$viewValue || '' ;
-                    tmp = tmp.toUpperCase() ;
-                    element.val(tmp);
-                    ngModel.$setViewValue(tmp);
-                };
+                    return;
                 element.bind('blur', function() {
-                    scope.$apply(read);
+                    scope.$apply(function () {
+                        var tmp = ngModel.$viewValue || '';
+                        tmp = tmp.toUpperCase() ;
+                        ngModel.$setViewValue(tmp);
+                        element.val(tmp);
+                    });
                 });
-                function read() {
-                    var tmp = ngModel.$viewValue || '';
-                    tmp = tmp.toUpperCase() ;
-                    ngModel.$setViewValue(tmp);
-                    element.val(tmp);
-                }
             }
         }
     }) ;

@@ -1,6 +1,49 @@
 define(function(require, exports, module){ 
 	var app = angular.module('app.factory',[]); 
-	require('angular-resource') ;
+	//require('angular-resource') ;
+	app.factory('SelectListData', function () {
+		return {
+			weightUnitList:[//行李单
+				{"name":"选择","value":""},
+				{"name":"千克","value":"K"},
+				{"name":"磅","value":"P"}
+			],
+			cabinList:[//舱位list集合
+				{"name":"选择","value":""},
+				{"name":"R-豪华头等舱","value":"R"},{"name":"F-头等舱","value":"F"},
+				{"name":"J-豪华商务舱","value":"J"},{"name":"C-商务舱","value":"C"},
+				{"name":"P-豪华经济舱","value":"P"},{"name":"Y-经济舱","value":"Y"}
+			],
+			geoLocTypeList:[//区域集合//geoSpecTypeList
+				{"name":"选择","value":""},
+				{"name":"A-大区","value":"A"},{"name":"C-城市","value":"C"},
+				{"name":"N-国家","value":"N"},{"name":"P-机场","value":"P"},
+				{"name":"S-州","value":"S"},{"name":"Z-区域","value":"Z"}
+			],
+			indicatorReissueRefundList:[//退/改
+				{"name":"选择","value":""},{"name":"不可退款","value":"N"},
+				{"name":"可退款","value":"Y"},{"name":"不可退款，下一次购票可同EMD单出","value":"R"}
+			],
+			formOfRefundList:[//退款形式
+				{"name":"选择","value":""},{"name":"按原付款渠道退款","value":"1"},
+				{"name":"按电子凭证退款","value":"2"}
+			],
+			geoSpecSectPortJourneyList:[
+				{"name":"选择","value":""},{"name":"区域","value":"S"},
+				{"name":"部分","value":"P"},{"name":"全程","value":"J"}
+			],
+			geoSpecExceptionStopUnitList:[
+				{"name":"分","value":"N"},{"name":"小时","value":"H"},
+				{"name":"天","value":"D"},{"name":"周","value":"W"},
+				{"name":"月","value":"M"}
+			],
+			timeApplicationList:[
+				{"name":"选择","value":""},{"name":"分别","value":"D"},
+				{"name":"之间","value":"R"}
+			]
+		} ;
+	}) ;
+
 	app.factory('FormData',['DEFAULT_SERVICETYPE',function(DEFAULT_SERVICETYPE) {
 		var contextPath = $.trim($("#contextPath").val()) ;
 		var carrCode = $.trim($("#carrCode").val()) ;
@@ -32,6 +75,7 @@ define(function(require, exports, module){
 		   list196VO:[//备注例外行李
 		   		//{"count":"1","code":"t01","selected":true}
 		   ],
+		   serviceFeeCurTableNo170:'',
 		   list170VO:[//金额表//对应上面的收费
 		   				{"saleGeographicPointType":"A","saleGeographicPoint":"1","specFeeAmount":"11","specFeeCurrency":"CNY"},
 		   				{"saleGeographicPointType":"N","saleGeographicPoint":"YY","specFeeAmount":"22","specFeeCurrency":"CNY"}
