@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap/css/bootstrap.css"/>
+    <script type="text/javascript" src="../lib/angular-1.4.js"></script>
+    <script type="text/javascript" src="..//lib/angular-ui-router.js"></script>
+
+</head>
+<body ng-app="app">
+
+
+    <div class="container" style="padding-top: 100px;" ng-controller="IndexController">
+
+        <form >
+
+
+
+            <table style="width: 200px;">
+
+                
+            </table>
+
+            <input type="radio" ng-change="change()" ng-model="data.hob" name = "hob" value = "">1<br/>
+            <input type="radio" ng-change="change()" ng-model="data.hob" name = "hob" value = "1">1<br/>
+            <input type="radio" ng-change="change()" ng-model="data.hob" name = "hob" value="2">2<br/>
+
+
+            <div ng-if="data.hob=='1'">
+               name1: <input type = "text" ng-model="data.name1"  />
+            </div>
+
+            <div ng-if="data.hob=='2'">
+                name2: <input type = "text" ng-model="data.name2"  />
+            </div>
+
+            <div>
+                name1:{{data.name1}} , name2:{{data.name2}}
+            </div>
+
+            <input type="radio" name = "ttt" ng-disabled=""  readonly="readonly" value = "1" />t1
+            <input type="radio" name = "ttt" readonly = "readonly" value = "2"/>t2
+
+            <input type="text" ng-model="addr" ng-readonly="data.hob=='1'"/>
+
+
+        </form>
+
+        <button ng-click="submit();">test</button>
+
+    </div>
+
+
+</body>
+<script type="text/javascript" src="index.js"></script>
+</html>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="gb2312"?>
+<root>
+  <node value="0" text="请选择"/>
+  <node value="03" text="朝阳区"/>
+  <node value="04" text="丰台区"/>
+</root>

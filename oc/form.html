@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap/css/bootstrap.css"/>
+    <script type="text/javascript" src="../lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../lib/angular-1.4.js"></script>
+    <script type="text/javascript" src="../lib/bootstrap.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-validation/dist/angular-validation.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-validation/dist/angular-validation-rule.js"></script>
+    <script type="text/javascript" src="form.js" ></script>
+    <style>
+        body{
+            font-size: 12px;
+            padding-top: 100px;
+        }
+    </style>
+</head>
+<body ng-app="app">
+    <div ng-controller="IndexController" class="container">
+        <form name="Form">
+            <div>
+                <label>Required</label>
+                <input type="text" name="required" ng-model="form.required" validator="required">
+            </div>
+            <div>
+                <label>Url</label>
+                <input type="text" name="url" ng-model="form.url" validator="required, url">
+            </div>
+            <button validation-submit="Form" ng-click="next()">Submit</button>
+            <button validation-reset="Form">Reset</button>
+        </form>
+    </div>
+</body>
+</html>

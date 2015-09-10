@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap/css/bootstrap.css"/>
+    <script type="text/javascript" src="../lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../lib/angular-1.4.js"></script>
+    <script type="text/javascript" src="../lib/bootstrap.js"></script>
+    <style>
+        body{
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body ng-app="app">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <ul class="nav nav-pills">
+            <li><a href="#">新建服务费用</a></li>
+            <li><a href="#">服务类型</a></li>
+            <li class="disabled"><a href="#">费用</a></li>
+            <li><a href="#">规则</a></li>
+        </ul>
+    </div>
+</nav>
+<div  ng-controller="IndexController" class = "container-fluid" style = "padding-top:62px;" >
+        <!-- 页面第一部分开始 -->
+        <div class="well well-lg ptd20">
+            <div>
+                <h4>1.选择附加服务</h4>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                                <div class="input-group">
+                                    <div class="input-group-addon">附加服务</div>
+                                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="必填项，请选择你需要的附加服务。">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <ul class="list-group">
+                                <li class="list-group-item">免费域名注册</li>
+                                <li class="list-group-item">免费 Window 空间托管</li>
+                                <li class="list-group-item">图像的数量</li>
+                                <li class="list-group-item">24*7 支持</li>
+                                <li class="list-group-item">每年更新成本</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-2">
+                            <ul class="list-group">
+                                <li class="list-group-item">免费域名注册</li>
+                                <li class="list-group-item">免费 Window 空间托管</li>
+                                <li class="list-group-item">图像的数量</li>
+                                <li class="list-group-item">24*7 支持</li>
+                                <li class="list-group-item">每年更新成本</li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-2">
+                            <ul class="list-group">
+                                <li class="list-group-item">免费域名注册</li>
+                                <li class="list-group-item">免费 Window 空间托管</li>
+                                <li class="list-group-item">图像的数量</li>
+                                <li class="list-group-item">24*7 支持</li>
+                                <li class="list-group-item">每年更新成本</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!--页面第一部分结束 -->
+    <form action="" class="form-horizontal" role="form">
+        <!-- 页面第二部分开始 -->
+        <div class="well well-lg ptd20">
+            <div>
+                <h4>2.确定费用<small>&nbsp;&nbsp;日期&nbsp;描述&nbsp;费用</small></h4>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h5 class="panel-title ">
+                                <small>日期&nbsp;&nbsp;描述</small>
+                            </h5>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">生效日期</label>
+                                    <div class="col-sm-8">
+                                        <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="Email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="inputPassword3" class="col-sm-4 control-label">截止日期</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="form-control input-sm" id="inputPassword3" placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="inputPassword3" class="col-sm-4 control-label">描述</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="form-control input-sm" id="inputPassword3" placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="inputPassword3" class="col-sm-4 control-label">上传图片</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="form-control input-sm" id="inputPassword3" placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="inputPassword3" class="col-sm-4 control-label">基础运价</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="form-control input-sm" id="inputPassword3" placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h5 class="panel-title ">
+                                <small>费用</small>
+                            </h5>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">费用</label>
+                                    <div class="col-sm-8">
+                                        <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="Email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="inputPassword3" class="col-sm-4 control-label">填写金额</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="form-control input-sm" id="inputPassword3" placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="inputPassword3" class="col-sm-4 control-label">里程</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="form-control input-sm" id="inputPassword3" placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="inputPassword3" class="col-sm-4 control-label">适用于</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="form-control input-sm" id="inputPassword3" placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="inputPassword3" class="col-sm-4 control-label">包含扣除</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="form-control input-sm" id="inputPassword3" placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="inputPassword3" class="col-sm-4 control-label">净价/销售价</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="form-control input-sm" id="inputPassword3" placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="inputPassword3" class="col-sm-4 control-label">或/和</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="form-control input-sm" id="inputPassword3" placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="inputPassword3" class="col-sm-4 control-label">里程</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="form-control input-sm" id="inputPassword3" placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="inputPassword3" class="col-sm-4 control-label">必须检查可用性</label>
+                                    <div class="col-sm-8">
+                                        <input type="password" class="form-control input-sm" id="inputPassword3" placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--页面第二部分结束 -->
+
+        <!-- 页面第三部分开始 -->
+        <div class="well well-lg ptd20">
+            <div>
+                <h4>3.规则详细<small>&nbsp;&nbsp;旅客 | 航班  时刻 | 地理信息</small></h4>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h5 class="panel-title ">
+                        <small>优先级序号</small>
+                    </h5>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-sm-4">
+                            <label for="inputEmail3" class="col-sm-4 control-label">优先级序号</label>
+                            <div class="col-sm-8">
+                                <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="Email">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h5 class="panel-title ">
+                    <small>旅客</small>
+                </h5>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <label for="inputEmail3" class="col-sm-4 control-label">旅客类型</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="Email">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <label for="inputEmail3" class="col-sm-4 control-label">年龄范围</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="Email">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <label for="inputEmail3" class="col-sm-4 control-label">个数范围</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="Email">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <label for="inputEmail3" class="col-sm-4 control-label">常旅客状态</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="Email">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <label for="inputEmail3" class="col-sm-4 control-label">客户积分范围</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="Email">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <label for="inputEmail3" class="col-sm-4 control-label">旅行编码</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="Email">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <label for="inputEmail3" class="col-sm-4 control-label">大客户/特殊客户表</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="Email">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <label for="inputEmail3" class="col-sm-4 control-label">指定客票表</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="Email">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <label for="inputEmail3" class="col-sm-4 control-label">安全发布表</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="Email">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-4">
+                        <label for="inputEmail3" class="col-sm-4 control-label">公布私有</label>
+                        <div class="col-sm-8">
+                            <input type="email" class="form-control input-sm" id="inputEmail3" placeholder="Email">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--页面第三部分结束 -->
+    </form>
+</div>
+
+
+
+
+
+</body>
+<script type="text/javascript" src="index.js"></script>
+</html>

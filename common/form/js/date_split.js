@@ -1,0 +1,15 @@
+var dateThemeColor="blue";
+$(function(){var c;
+$("input:text[class='date'],input:text[class='cusDate']").each(function(){$(this).hover(function(){if(c!=$(this)[0]){$(this).addClass("date_hover")}},function(){if(c!=$(this)[0]){$(this).removeClass("date_hover")}});
+$(this).focus(function(){c=$(this)[0];
+$(this).removeClass("date_hover");
+$(this).addClass("date_click")});
+$(this).blur(function(){c=null;
+$(this).removeClass("date_click")})});
+var b="";
+if($(".date").length>0){var a=document.createElement("script");
+a.type="text/javascript";
+a.src="/nms/Common/kit/form/js/datePicker/WdatePicker.js";
+document.body.appendChild(a);
+$(".date").each(function(){var d="yyyy-MM-dd";
+if($(this).attr("dateFmt")!=null){d=$(this).attr("dateFmt")}$(this).focus(function(){WdatePicker({skin:dateThemeColor,isShowClear:true,dateFmt:d,onpicked:function(e){$(this).blur()}})})})}});

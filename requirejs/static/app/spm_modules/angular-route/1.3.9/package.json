@@ -1,0 +1,23 @@
+{
+        "name": "angular-route",
+        "version": "1.3.9",
+        "description": "HTML enhanced for web apps http://angularjs.org",
+        "keywords": ["angular", "angularjs", "angular.js", "angular-route"],
+        "homepage": "https://www.angularjs.org/",
+        "author": "GENGSHUANGs <abe.keng@gmail.com>",
+        "repository": {
+                "type": "git",
+                "url": "git@github.com:angular/angular.js.git"
+        },
+        "bugs": {
+                "url": "https://github.com/angular/angular.js/issues"
+        },
+        "licenses": "MIT",
+        "spm": {
+                "main": "index.js",
+                "dependencies": {
+                        "angular": "1.3.9"
+                },
+                "devDependencies": {}
+        }
+}

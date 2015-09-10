@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="gb2312"?>
+<root>
+  <node value="0" text="请选择"/>
+  <node value="01" text="郑州"/>
+  <node value="02" text="商丘"/>
+</root>

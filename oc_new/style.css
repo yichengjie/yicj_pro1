@@ -1,0 +1,26 @@
+body{
+    font-size: 12px;
+}
+.pt_tip{
+    padding-top: 5px;
+}
+.myhand{
+    cursor: pointer;
+}
+/*导航栏上按钮组距右边的间距*/
+.navBtnPad{
+    padding-top: 8px;
+    padding-right: 20px;
+}
+
+.editCtrlPadTop{
+    padding-top: 64px;
+}
+
+.pdr10{
+     padding-right: 10px;
+ }
+.pdl10{
+    padding-left: 10px;
+}
+

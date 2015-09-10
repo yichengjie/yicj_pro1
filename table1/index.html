@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap/css/bootstrap.css"/>
+    <script type="text/javascript" src="../lib/angular-1.4.js"></script>
+    <script type="text/javascript" src="../lib/underscore.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body ng-app="app">
+    <br/>
+    <br/>
+    <br/>
+
+    <button clas>test</button>
+
+    <input placeholder="">
+
+    <div ng-controller="IndexController" class="container" >
+        <div class="row" ng-hide="stList.length==0">
+            <div class="col-sm-7">
+               <show-hide-table tlength = "{{stList.length}}">
+                   <table-info>
+                       <tr-info ng-repeat="st in stList"></tr-info>
+                   </table-info>
+               </show-hide-table>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="panel panel-warning" ng-show="stList.length==0">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">提示信息</h3>
+                    </div>
+                    <div class="panel-body">
+                        不存在可显示的列表信息
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" >
+            <div class="col-sm-10">
+                <button   class = "btn btn-default addLine" ng-click="addLine();">增加一行</button>
+                <button   class = "btn delLine" ng-click="delLine();">删除一行</button>
+            </div>
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+</body>
+</html>
