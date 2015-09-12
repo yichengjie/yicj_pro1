@@ -1,5 +1,6 @@
 define(function(require, exports, module) {
     var directives = require("./directives");
+    var _ = require('underscore') ;
 
     directives.directive('ocInputValid', function () {
         return {
@@ -19,6 +20,18 @@ define(function(require, exports, module) {
                 }) ;
             }
         } ;
+    }) ;
+
+
+    directives.directive('commmonInput',function(){
+        return {
+            restrict: 'E',
+            replace: true,
+            scope:{},
+            link: function(scope, elem, attrs) {
+                elem.trigger('click') ;
+            }
+        };
     }) ;
 
     directives.directive('setFocus', function(){
