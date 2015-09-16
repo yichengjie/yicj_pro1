@@ -11,7 +11,7 @@
     <script type="text/javascript" src="../lib/bootstrap.js"></script>
     <script type="text/javascript" src = "seajs/sea-debug.js"></script>
     <script type="text/javascript" src = "seajs/seajs-preload-debug.js"></script>
-    <script type="text/javascript" src = "app/config.js"></script>
+    <script type="text/javascript" src = "config/config.js"></script>
 </head>
 <body ng-controller="EditController">
 <input id="carrCode"  type="hidden" value='HW' />
@@ -100,7 +100,7 @@
         </div>
         <!--页面第一部分结束 -->
         <!--页面第一部分结束 -->
-        <form name="ocForm" class="form-horizontal" role="form">
+        <form name="ocForm" class="form-horizontal" role="form"   novalidate="novalidate">
             <!-- 页面第二部分开始 -->
             <div class="panel panel-info">
                 <div class="panel-heading">
@@ -110,7 +110,7 @@
                 </div>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="form-group col-sm-6 has-feedback"   ng-class="{true:'has-error'}[ocForm.firstMaintenanceDate.$invalid&&ocForm.firstMaintenanceDate.$dirty]">
+                        <div class="form-group col-sm-6" >
                             <label  class="col-sm-3 control-label">生效日期</label>
                             <div class="col-sm-5">
                                 <input type="text"
@@ -119,11 +119,10 @@
                                        ng-model="data.firstMaintenanceDate" data-date-format="yyyy-MM-dd" data-date-type="number"
                                        data-min-date="today" data-max-date="2016-12-12" data-autoclose="1"
                                        bs-datepicker ng-required="true">
-                                <oc-input-valid name = "ocForm.firstMaintenanceDate"></oc-input-valid>
                             </div>
                         </div>
 
-                        <div class="form-group col-sm-6 has-feedback" ng-class="{true:'has-error'}[ocForm.lastMaintenanceDate.$invalid&&ocForm.lastMaintenanceDate.$dirty]">
+                        <div class="form-group col-sm-6">
                             <label  class="col-sm-3 control-label">截止日期</label>
                             <div class="col-sm-5">
                                 <input type="text"
@@ -136,30 +135,21 @@
                                        data-max-date="2016-12-12"
                                        data-autoclose="1"
                                        bs-datepicker>
-                                <oc-input-valid name = "ocForm.lastMaintenanceDate"></oc-input-valid>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group col-sm-6 has-feedback" ng-class="{true:'has-error'}[ocForm.fareBasis.$invalid&&ocForm.fareBasis.$dirty]">
+                        <div class="form-group col-sm-6">
                             <label  class="col-sm-3 control-label">基础运价</label>
                             <div class="col-sm-5">
-                                <span>
-                                    <input type="text"  upper-input="" name="fareBasis" alphanumeric ng-maxlength="20"
-                                           ng-model="data.fareBasis" class="form-control input-sm"  placeholder="字母或数字">
-                                </span>
-                                <oc-input-valid name = "ocForm.fareBasis"></oc-input-valid>
-                            </div>
-                            <div class="col-sm-3 pt_tip">
-                                <span class = "text-danger" ng-show="ocForm.fareBasis.$error.maxlength&&ocForm.fareBasis.$dirty"><small>最大程度超过20位</small></span>
-                                <span class = "text-danger" ng-show="ocForm.fareBasis.$error.alphanumeric&&ocForm.fareBasis.$dirty"><small>输入字母数字</small></span>
+                                <input type="text"  upper-input="" name="fareBasis" alphanumeric ng-maxlength="20"
+                                       ng-model="data.fareBasis" class="form-control input-sm"  placeholder="字母或数字">
                             </div>
                         </div>
                         <div class="form-group col-sm-6">
                             <label  class="col-sm-3 control-label">上传图片</label>
                             <div class="col-sm-5">
                                 <input type="text" class="form-control input-sm"  placeholder="暂时未开通">
-                                <oc-input-valid name = "ocForm.lastMaintenanceDate"></oc-input-valid>
                             </div>
                         </div>
                     </div>

@@ -7,4 +7,6 @@ app.run(['bootstrap3ElementModifier', function (bootstrap3ElementModifier) {
 app.controller('IndexController',['$scope', function ($scope) {
 
 
+    console.info('我的中文测试') ;
+
 }]) ;
