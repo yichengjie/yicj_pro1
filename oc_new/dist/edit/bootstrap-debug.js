@@ -1035,7 +1035,7 @@ define("fare/oc/1.0.0/lib/helpers/date-parser-debug", [], function(require, expo
             format: "shortDate",
             strict: false
         };
-        this.$get = function($locale, dateFilter) {
+        var myGet = function($locale, dateFilter) {
             var DateParserFactory = function(config) {
                 var options = angular.extend({}, defaults, config);
                 var $dateParser = {};
@@ -1243,6 +1243,8 @@ define("fare/oc/1.0.0/lib/helpers/date-parser-debug", [], function(require, expo
             };
             return DateParserFactory;
         };
+        myGet.$inject = [ "$locale", "dateFilter" ];
+        this.$get = myGet;
     } ]);
 });
 
@@ -1584,7 +1586,7 @@ define("fare/oc/1.0.0/lib/datepicker/datepicker-debug", [], function(require, ex
             iconLeft: "glyphicon glyphicon-chevron-left",
             iconRight: "glyphicon glyphicon-chevron-right"
         };
-        this.$get = function($window, $document, $rootScope, $sce, $dateFormatter, datepickerViews, $tooltip, $timeout) {
+        var myGet = function($window, $document, $rootScope, $sce, $dateFormatter, datepickerViews, $tooltip, $timeout) {
             var bodyEl = angular.element($window.document.body);
             var isNative = /(ip(a|o)d|iphone|android)/gi.test($window.navigator.userAgent);
             var isTouch = "createTouch" in $window.document && isNative;
@@ -1774,6 +1776,8 @@ define("fare/oc/1.0.0/lib/datepicker/datepicker-debug", [], function(require, ex
             DatepickerFactory.defaults = defaults;
             return DatepickerFactory;
         };
+        myGet.$inject = [ "$window", "$document", "$rootScope", "$sce", "$dateFormatter", "datepickerViews", "$tooltip", "$timeout" ];
+        this.$get = myGet;
     }).directive("bsDatepicker", [ "$window", "$parse", "$q", "$dateFormatter", "$dateParser", "$datepicker", function($window, $parse, $q, $dateFormatter, $dateParser, $datepicker) {
         var defaults = $datepicker.defaults;
         var isNative = /(ip(a|o)d|iphone|android)/gi.test($window.navigator.userAgent);
@@ -1946,7 +1950,7 @@ define("fare/oc/1.0.0/lib/datepicker/datepicker-debug", [], function(require, ex
         function mod(n, m) {
             return (n % m + m) % m;
         }
-        this.$get = function($dateFormatter, $dateParser, $sce) {
+        var myGet = function($dateFormatter, $dateParser, $sce) {
             return function(picker) {
                 var scope = picker.$scope;
                 var options = picker.$options;
@@ -2163,6 +2167,8 @@ define("fare/oc/1.0.0/lib/datepicker/datepicker-debug", [], function(require, ex
                 };
             };
         };
+        myGet.$inject = [ "$dateFormatter", "$dateParser", "$sce" ];
+        this.$get = myGet;
     });
 });
 
@@ -2702,7 +2708,7 @@ define("fare/oc/1.0.0/lib/tooltip/tooltip-debug", [], function(require, exports,
                 padding: 0
             }
         };
-        this.$get = function($window, $rootScope, $bsCompiler, $q, $templateCache, $http, $animate, $sce, dimensions, $$rAF, $timeout) {
+        var myGet = function($window, $rootScope, $bsCompiler, $q, $templateCache, $http, $animate, $sce, dimensions, $$rAF, $timeout) {
             var trim = String.prototype.trim;
             var isTouch = "createTouch" in $window.document;
             var htmlReplaceRegExp = /ng-bind="/gi;
@@ -3270,7 +3276,9 @@ define("fare/oc/1.0.0/lib/tooltip/tooltip-debug", [], function(require, exports,
             }
             return TooltipFactory;
         };
-    }).directive("bsTooltip", function($window, $location, $sce, $tooltip, $$rAF) {
+        myGet.$inject = [ "$window", "$rootScope", "$bsCompiler", "$q", "$templateCache", "$http", "$animate", "$sce", "dimensions", "$$rAF", "$timeout" ];
+        this.$get = myGet;
+    }).directive("bsTooltip", [ "$window", "$location", "$sce", "$tooltip", "$$rAF", function($window, $location, $sce, $tooltip, $$rAF) {
         return {
             restrict: "EAC",
             scope: true,
@@ -3346,7 +3354,7 @@ define("fare/oc/1.0.0/lib/tooltip/tooltip-debug", [], function(require, exports,
                 });
             }
         };
-    });
+    } ]);
 });
 
 define("fare/oc/1.0.0/lib/tooltip/tooltip.tpl-debug.html", [], '<div class="tooltip in" ng-show="title">\n  <div class="tooltip-arrow"></div>\n  <div class="tooltip-inner" ng-bind="title"></div>\n</div>\n');

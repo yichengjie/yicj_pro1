@@ -44,7 +44,7 @@ angular.module('mgcrea.ngStrap.datepicker', [
       iconRight: 'glyphicon glyphicon-chevron-right'
     };
 
-    this.$get = function($window, $document, $rootScope, $sce, $dateFormatter, datepickerViews, $tooltip, $timeout) {
+    var myGet = function($window, $document, $rootScope, $sce, $dateFormatter, datepickerViews, $tooltip, $timeout) {
 
       var bodyEl = angular.element($window.document.body);
       var isNative = /(ip(a|o)d|iphone|android)/ig.test($window.navigator.userAgent);
@@ -256,6 +256,8 @@ angular.module('mgcrea.ngStrap.datepicker', [
       return DatepickerFactory;
 
     };
+      myGet.$inject = ['$window', '$document', '$rootScope', '$sce', '$dateFormatter', 'datepickerViews', '$tooltip', '$timeout'] ;
+    this.$get = myGet ;
 
   })
 
@@ -455,7 +457,7 @@ angular.module('mgcrea.ngStrap.datepicker', [
       return ((n % m) + m) % m;
     }
 
-    this.$get = function($dateFormatter, $dateParser, $sce) {
+    var myGet = function($dateFormatter, $dateParser, $sce) {
 
       return function(picker) {
 
@@ -650,7 +652,9 @@ angular.module('mgcrea.ngStrap.datepicker', [
       };
 
     };
+      myGet.$inject = ['$dateFormatter', '$dateParser', '$sce'] ;
+      this.$get = myGet ;
 
-  });
+    });
 
 }) ;

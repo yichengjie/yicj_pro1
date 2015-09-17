@@ -63,7 +63,7 @@ angular.module('mgcrea.ngStrap.helpers.dateParser', [])
     strict: false
   };
 
-  this.$get = function($locale, dateFilter) {
+  var myGet =  function($locale, dateFilter) {
 
     var DateParserFactory = function(config) {
 
@@ -282,6 +282,9 @@ angular.module('mgcrea.ngStrap.helpers.dateParser', [])
     return DateParserFactory;
 
   };
+
+    myGet.$inject = ['$locale', 'dateFilter'] ;
+    this.$get = myGet ;
 
 }]);
 

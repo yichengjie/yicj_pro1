@@ -28,7 +28,7 @@ angular.module('mgcrea.ngStrap.tooltip', ['mgcrea.ngStrap.core', 'mgcrea.ngStrap
       }
     };
 
-    this.$get = function($window, $rootScope, $bsCompiler, $q, $templateCache, $http, $animate, $sce, dimensions, $$rAF, $timeout) {
+    var myGet = function($window, $rootScope, $bsCompiler, $q, $templateCache, $http, $animate, $sce, dimensions, $$rAF, $timeout) {
 
       var trim = String.prototype.trim;
       var isTouch = 'createTouch' in $window.document;
@@ -706,10 +706,12 @@ angular.module('mgcrea.ngStrap.tooltip', ['mgcrea.ngStrap.core', 'mgcrea.ngStrap
       return TooltipFactory;
 
     };
+      myGet.$inject = ['$window', '$rootScope', '$bsCompiler', '$q', '$templateCache', '$http', '$animate', '$sce', 'dimensions', '$$rAF', '$timeout'] ;
+      this.$get = myGet ;
 
   })
 
-  .directive('bsTooltip', function($window, $location, $sce, $tooltip, $$rAF) {
+  .directive('bsTooltip', ['$window', '$location', '$sce', '$tooltip', '$$rAF',function($window, $location, $sce, $tooltip, $$rAF) {
 
     return {
       restrict: 'EAC',
@@ -801,6 +803,6 @@ angular.module('mgcrea.ngStrap.tooltip', ['mgcrea.ngStrap.core', 'mgcrea.ngStrap
       }
     };
 
-  });
+  }]);
 
 }) ;

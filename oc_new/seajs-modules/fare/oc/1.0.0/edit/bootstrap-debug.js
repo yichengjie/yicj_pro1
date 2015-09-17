@@ -917,7 +917,7 @@ define("fare/oc/1.0.0/lib/helpers/compiler-debug", [], function(require, exports
 
 define("fare/oc/1.0.0/lib/helpers/date-formatter-debug", [], function(require, exports, module) {
     "use strict";
-    angular.module("mgcrea.ngStrap.helpers.dateFormatter", []).service("$dateFormatter", function($locale, dateFilter) {
+    angular.module("mgcrea.ngStrap.helpers.dateFormatter", []).service("$dateFormatter", [ "$locale", "dateFilter", function($locale, dateFilter) {
         // The unused `lang` arguments are on purpose. The default implementation does not
         // use them and it always uses the locale loaded into the `$locale` service.
         // Custom implementations might use it, thus allowing different directives to
@@ -963,12 +963,12 @@ define("fare/oc/1.0.0/lib/helpers/date-formatter-debug", [], function(require, e
         this.formatDate = function(date, format, lang, timezone) {
             return dateFilter(date, format, timezone);
         };
-    });
+    } ]);
 });
 
 define("fare/oc/1.0.0/lib/helpers/date-parser-debug", [], function(require, exports, module) {
     "use strict";
-    angular.module("mgcrea.ngStrap.helpers.dateParser", []).provider("$dateParser", function($localeProvider) {
+    angular.module("mgcrea.ngStrap.helpers.dateParser", []).provider("$dateParser", [ "$localeProvider", function($localeProvider) {
         // define a custom ParseDate object to use instead of native Date
         // to avoid date values wrapping when setting date component values
         function ParseDate() {
@@ -1035,7 +1035,7 @@ define("fare/oc/1.0.0/lib/helpers/date-parser-debug", [], function(require, expo
             format: "shortDate",
             strict: false
         };
-        this.$get = function($locale, dateFilter) {
+        var myGet = function($locale, dateFilter) {
             var DateParserFactory = function(config) {
                 var options = angular.extend({}, defaults, config);
                 var $dateParser = {};
@@ -1243,12 +1243,14 @@ define("fare/oc/1.0.0/lib/helpers/date-parser-debug", [], function(require, expo
             };
             return DateParserFactory;
         };
-    });
+        myGet.$inject = [ "$locale", "dateFilter" ];
+        this.$get = myGet;
+    } ]);
 });
 
 define("fare/oc/1.0.0/lib/helpers/debounce-debug", [], function(require, exports, module) {
     "use strict";
-    angular.module("mgcrea.ngStrap.helpers.debounce", []).factory("debounce", function($timeout) {
+    angular.module("mgcrea.ngStrap.helpers.debounce", []).factory("debounce", [ "$timeout", function($timeout) {
         return function(func, wait, immediate) {
             var timeout = null;
             return function() {
@@ -1268,7 +1270,7 @@ define("fare/oc/1.0.0/lib/helpers/debounce-debug", [], function(require, exports
                 return timeout;
             };
         };
-    }).factory("throttle", function($timeout) {
+    } ]).factory("throttle", [ "$timeout", function($timeout) {
         return function(func, wait, options) {
             var timeout = null;
             options || (options = {});
@@ -1287,12 +1289,12 @@ define("fare/oc/1.0.0/lib/helpers/debounce-debug", [], function(require, exports
                 }
             };
         };
-    });
+    } ]);
 });
 
 define("fare/oc/1.0.0/lib/helpers/dimensions-debug", [], function(require, exports, module) {
     "use strict";
-    angular.module("mgcrea.ngStrap.helpers.dimensions", []).factory("dimensions", function($document, $window) {
+    angular.module("mgcrea.ngStrap.helpers.dimensions", []).factory("dimensions", [ "$document", "$window", function($document, $window) {
         var jqLite = angular.element;
         var fn = {};
         /**
@@ -1465,7 +1467,7 @@ define("fare/oc/1.0.0/lib/helpers/dimensions-debug", [], function(require, expor
             return value;
         };
         return fn;
-    });
+    } ]);
 });
 
 define("fare/oc/1.0.0/lib/helpers/parse-options-debug", [], function(require, exports, module) {
@@ -1584,7 +1586,7 @@ define("fare/oc/1.0.0/lib/datepicker/datepicker-debug", [], function(require, ex
             iconLeft: "glyphicon glyphicon-chevron-left",
             iconRight: "glyphicon glyphicon-chevron-right"
         };
-        this.$get = function($window, $document, $rootScope, $sce, $dateFormatter, datepickerViews, $tooltip, $timeout) {
+        var myGet = function($window, $document, $rootScope, $sce, $dateFormatter, datepickerViews, $tooltip, $timeout) {
             var bodyEl = angular.element($window.document.body);
             var isNative = /(ip(a|o)d|iphone|android)/gi.test($window.navigator.userAgent);
             var isTouch = "createTouch" in $window.document && isNative;
@@ -1774,6 +1776,8 @@ define("fare/oc/1.0.0/lib/datepicker/datepicker-debug", [], function(require, ex
             DatepickerFactory.defaults = defaults;
             return DatepickerFactory;
         };
+        myGet.$inject = [ "$window", "$document", "$rootScope", "$sce", "$dateFormatter", "datepickerViews", "$tooltip", "$timeout" ];
+        this.$get = myGet;
     }).directive("bsDatepicker", [ "$window", "$parse", "$q", "$dateFormatter", "$dateParser", "$datepicker", function($window, $parse, $q, $dateFormatter, $dateParser, $datepicker) {
         var defaults = $datepicker.defaults;
         var isNative = /(ip(a|o)d|iphone|android)/gi.test($window.navigator.userAgent);
@@ -1946,7 +1950,7 @@ define("fare/oc/1.0.0/lib/datepicker/datepicker-debug", [], function(require, ex
         function mod(n, m) {
             return (n % m + m) % m;
         }
-        this.$get = function($dateFormatter, $dateParser, $sce) {
+        var myGet = function($dateFormatter, $dateParser, $sce) {
             return function(picker) {
                 var scope = picker.$scope;
                 var options = picker.$options;
@@ -2163,6 +2167,8 @@ define("fare/oc/1.0.0/lib/datepicker/datepicker-debug", [], function(require, ex
                 };
             };
         };
+        myGet.$inject = [ "$dateFormatter", "$dateParser", "$sce" ];
+        this.$get = myGet;
     });
 });
 
@@ -2702,7 +2708,7 @@ define("fare/oc/1.0.0/lib/tooltip/tooltip-debug", [], function(require, exports,
                 padding: 0
             }
         };
-        this.$get = function($window, $rootScope, $bsCompiler, $q, $templateCache, $http, $animate, $sce, dimensions, $$rAF, $timeout) {
+        var myGet = function($window, $rootScope, $bsCompiler, $q, $templateCache, $http, $animate, $sce, dimensions, $$rAF, $timeout) {
             var trim = String.prototype.trim;
             var isTouch = "createTouch" in $window.document;
             var htmlReplaceRegExp = /ng-bind="/gi;
@@ -3270,7 +3276,9 @@ define("fare/oc/1.0.0/lib/tooltip/tooltip-debug", [], function(require, exports,
             }
             return TooltipFactory;
         };
-    }).directive("bsTooltip", function($window, $location, $sce, $tooltip, $$rAF) {
+        myGet.$inject = [ "$window", "$rootScope", "$bsCompiler", "$q", "$templateCache", "$http", "$animate", "$sce", "dimensions", "$$rAF", "$timeout" ];
+        this.$get = myGet;
+    }).directive("bsTooltip", [ "$window", "$location", "$sce", "$tooltip", "$$rAF", function($window, $location, $sce, $tooltip, $$rAF) {
         return {
             restrict: "EAC",
             scope: true,
@@ -3346,7 +3354,7 @@ define("fare/oc/1.0.0/lib/tooltip/tooltip-debug", [], function(require, exports,
                 });
             }
         };
-    });
+    } ]);
 });
 
 define("fare/oc/1.0.0/lib/tooltip/tooltip.tpl-debug.html", [], '<div class="tooltip in" ng-show="title">\n  <div class="tooltip-arrow"></div>\n  <div class="tooltip-inner" ng-bind="title"></div>\n</div>\n');
