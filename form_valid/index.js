@@ -6,6 +6,13 @@ app.run(['bootstrap3ElementModifier', function (bootstrap3ElementModifier) {
 
 app.controller('IndexController',['$scope', function ($scope) {
 
+    $scope.data = {
+        name:"yicj",
+        password:"123",
+        dept:"soft",
+        lover:'1'
+
+    } ;
 
     console.info('我的中文测试') ;
 

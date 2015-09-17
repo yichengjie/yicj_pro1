@@ -97,6 +97,7 @@ define(function(require, exports, module){
         if (frmGroupEl) {
           reset(frmGroupEl);
           inputGroupEl = findInputGroupElement(frmGroupEl[0]);
+
           frmGroupEl.addClass('has-success ' + (inputGroupEl.length > 0 ? '' : 'has-feedback'));
           if (addValidationStateIcons) {
             var iconElText = '<span class="glyphicon glyphicon-ok form-control-feedback"></span>';
