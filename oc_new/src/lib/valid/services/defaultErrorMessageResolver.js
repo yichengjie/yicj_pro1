@@ -17,17 +17,19 @@ define(function(require, exports, module){
   };
 
   angular.autoValidate.errorMessages['en-us'] = angular.autoValidate.errorMessages['en-gb'] = {
-    defaultMsg: 'Please add error message for {0}',
-    email: 'Please enter a valid email address',
-    minlength: 'Please enter at least {0} characters',
-    maxlength: 'You have entered more than the maximum {0} characters',
-    min: 'Please enter the minimum number of {0}',
-    max: 'Please enter the maximum number of {0}',
-    required: 'This field is required',
-    date: 'Please enter a valid date',
-    pattern: 'Please ensure the entered information adheres to this pattern {0}',
-    number: 'Please enter a valid number',
-    url: 'Please enter a valid URL in the format of http(s)://www.google.com'
+    "defaultMsg": "请为 {0} 增加错误信息",
+    "email": "请输入合法的电子邮箱地址",
+    "minlength": "请输入至少 {0} 字符",
+    "maxlength": "最多只允许输入 {0} 字符",
+    "min": "请输入 {0} 允许的最小数值",
+    "max": "请输入 {0} 允许的最大数值",
+    "required": "这个字段是必须的",
+    "date": "请输入合法日期",
+    "pattern": "请确认输入信息符合规则 {0}",
+    "number": "请输入一个合法数字",
+    "url": "请输入正确的网址",
+    "alphanumeric":"请输入字母或数字",
+    "integer":"请输入正整数"
   };
 
   function DefaultErrorMessageResolverFn($q, $http) {

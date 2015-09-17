@@ -7,7 +7,7 @@
         <div class="modal-body">
             <form  name = "ocModelForm" class="form-horizontal" role="form">
             <%if("tb170.html"==value){%>
-                <div class="form-group has-feedback" ng-class="{true:'has-error'}[ocModelForm.saleGeographicPointType.$invalid&&ocModelForm.saleGeographicPointType.$dirty]">
+                <div class="form-group has-feedback">
                     <label  class="col-sm-3 control-label">销售地类型</label>
                     <div class="col-sm-6">
                         <select ng-model="rowData.saleGeographicPointType"
@@ -16,37 +16,22 @@
                         </select>
                     </div>
                 </div>
-                <div class="form-group  has-feedback" ng-class="{true:'has-error'}[ocModelForm.saleGeographicPoint.$invalid&&ocModelForm.saleGeographicPoint.$dirty]">
+                <div class="form-group  has-feedback">
                     <label  class="col-sm-3 control-label">销售地代码</label>
                     <div class="col-sm-6">
                         <input type="text"  name="saleGeographicPoint" ng-required="true" ng-model="rowData.saleGeographicPoint" class="form-control input-sm"  >
-                        <oc-input-valid name = "ocModelForm.saleGeographicPoint"></oc-input-valid>
-                    </div>
-                    <div class="col-sm-3 pt_tip" ng-show="ocModelForm.saleGeographicPoint.$dirty">
-                        <span class = "text-danger" ng-show="ocModelForm.saleGeographicPoint.$error.required">必填项</span>
                     </div>
                 </div>
-                <div class="form-group  has-feedback" ng-class="{true:'has-error'}[ocModelForm.specFeeAmount.$invalid&&ocModelForm.specFeeAmount.$dirty]">
+                <div class="form-group  has-feedback">
                     <label  class="col-sm-3 control-label">金额</label>
                     <div class="col-sm-6">
                         <input type="text" integer="true" ng-maxlength="7"  ng-required="true" name ="specFeeAmount" ng-model="rowData.specFeeAmount" class="form-control input-sm" >
-                        <oc-input-valid name = "ocModelForm.specFeeAmount"></oc-input-valid>
-                    </div>
-                    <div class="col-sm-3 pt_tip" ng-show="ocModelForm.specFeeAmount.$dirty">
-                        <span class = "text-danger" ng-show="ocModelForm.specFeeAmount.$error.integer">必须输入正整数</span>
-                        <span class = "text-danger" ng-show="ocModelForm.specFeeAmount.$error.required">必填项</span>
-                        <span class = "text-danger" ng-show="ocModelForm.specFeeAmount.$error.maxlength">超过7位</span>
                     </div>
                 </div>
-                <div class="form-group  has-feedback" ng-class="{true:'has-error'}[ocModelForm.specFeeCurrency.$invalid&&ocModelForm.specFeeCurrency.$dirty]">
+                <div class="form-group  has-feedback">
                     <label  class="col-sm-3 control-label">货比类型</label>
                     <div class="col-sm-6">
                         <input type="text" ng-maxlength="3" ng-required="true" name="specFeeCurrency" ng-model="rowData.specFeeCurrency" upper-input="" class="form-control input-sm">
-                        <oc-input-valid name = "ocModelForm.specFeeCurrency"></oc-input-valid>
-                    </div>
-                    <div class="col-sm-3 pt_tip" ng-show="ocModelForm.specFeeCurrency.$dirty">
-                        <span class = "text-danger"  ng-show="ocModelForm.specFeeCurrency.$error.required">必填项</span>
-                        <span class = "text-danger"  ng-show="ocModelForm.specFeeCurrency.$error.maxlength">超过3位</span>
                     </div>
                 </div>
             <%}else if("tb172.html"==value){%>

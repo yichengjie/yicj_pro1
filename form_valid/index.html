@@ -19,7 +19,7 @@
             <div class="form-group">
                 <label  class="col-sm-2 control-label">Username</label>
                 <div class="col-sm-6">
-                    <input name="username" class="form-control" ng-model="data.name"
+                    <input name="username" id = "username" class="form-control" ng-model="data.name"
                            ng-minlength="3" ng-maxlength="10" required/>
                 </div>
             </div>
@@ -34,7 +34,7 @@
             <div class="form-group">
                 <label  class="col-sm-2 control-label">系别</label>
                 <div class="col-sm-6" >
-                    <select ng-model="data.dept" class="form-control">
+                    <select id ="dept" ng-model="data.dept" class="form-control">
                         <option value = "1">1</option>
                         <option value = "2">2</option>
                         <option value = "3">3</option>
@@ -46,13 +46,13 @@
                 <label  class="col-sm-2 control-label">爱好</label>
                 <div class="col-sm-6" >
                     <label class="radio-inline">
-                        <input type="radio" ng-model="data.lover" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 1
+                        <input type="radio"  ng-model="data.lover" name="inlineRadioOptions" id = "inlineRadio1" name="inlineRadio" value="option1"> 1
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" ng-model="data.lover" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 2
+                        <input type="radio" ng-model="data.lover" name="inlineRadioOptions" name="inlineRadio" value="option2"> 2
                     </label>
                     <label class="radio-inline">
-                        <input type="radio" ng-model="data.lover"  name="inlineRadioOptions" id="inlineRadio3" value="option3"> 3
+                        <input type="radio" ng-model="data.lover"  name="inlineRadioOptions" name="inlineRadio" value="option3"> 3
                     </label>
                 </div>
             </div>

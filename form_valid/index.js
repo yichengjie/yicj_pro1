@@ -15,5 +15,9 @@ app.controller('IndexController',['$scope', function ($scope) {
     } ;
 
     console.info('我的中文测试') ;
+    var $username = $("#inlineRadio1") ;
+    var username = $username[0] ;
+    var type = username.type ;
+    console.info(type) ;
 
 }]) ;

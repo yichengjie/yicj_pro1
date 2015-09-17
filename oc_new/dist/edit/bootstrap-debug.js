@@ -601,7 +601,7 @@ define("fare/oc/1.0.0/edit/tpls/tb_btnUpdate-debug.html", [], '<span class="glyp
 
 define("fare/oc/1.0.0/edit/tpls/tb_btnDelete-debug.html", [], '<span class="glyphicon glyphicon-remove myhand text-danger"\n      aria-hidden="true" data-toggle="tooltip" title="删除"></span>');
 
-define("fare/oc/1.0.0/edit/tpls/tb_row-debug.html", [], '<div class="modal-dialog">\n    <div class="modal-content">\n        <div class="modal-header">\n            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>\n            <h4 class="modal-title" id="myModalLabel" ng-bind="title"></h4>\n        </div>\n        <div class="modal-body">\n            <form  name = "ocModelForm" class="form-horizontal" role="form">\n            <%if("tb170.html"==value){%>\n                <div class="form-group has-feedback" ng-class="{true:\'has-error\'}[ocModelForm.saleGeographicPointType.$invalid&&ocModelForm.saleGeographicPointType.$dirty]">\n                    <label  class="col-sm-3 control-label">销售地类型</label>\n                    <div class="col-sm-6">\n                        <select ng-model="rowData.saleGeographicPointType"\n                                class="form-control input-sm"\n                                ng-options="o.value as o.name for o in selectList.geoLocTypeList">\n                        </select>\n                    </div>\n                </div>\n                <div class="form-group  has-feedback" ng-class="{true:\'has-error\'}[ocModelForm.saleGeographicPoint.$invalid&&ocModelForm.saleGeographicPoint.$dirty]">\n                    <label  class="col-sm-3 control-label">销售地代码</label>\n                    <div class="col-sm-6">\n                        <input type="text"  name="saleGeographicPoint" ng-required="true" ng-model="rowData.saleGeographicPoint" class="form-control input-sm"  >\n                        <oc-input-valid name = "ocModelForm.saleGeographicPoint"></oc-input-valid>\n                    </div>\n                    <div class="col-sm-3 pt_tip" ng-show="ocModelForm.saleGeographicPoint.$dirty">\n                        <span class = "text-danger" ng-show="ocModelForm.saleGeographicPoint.$error.required">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group  has-feedback" ng-class="{true:\'has-error\'}[ocModelForm.specFeeAmount.$invalid&&ocModelForm.specFeeAmount.$dirty]">\n                    <label  class="col-sm-3 control-label">金额</label>\n                    <div class="col-sm-6">\n                        <input type="text" integer="true" ng-maxlength="7"  ng-required="true" name ="specFeeAmount" ng-model="rowData.specFeeAmount" class="form-control input-sm" >\n                        <oc-input-valid name = "ocModelForm.specFeeAmount"></oc-input-valid>\n                    </div>\n                    <div class="col-sm-3 pt_tip" ng-show="ocModelForm.specFeeAmount.$dirty">\n                        <span class = "text-danger" ng-show="ocModelForm.specFeeAmount.$error.integer">必须输入正整数</span>\n                        <span class = "text-danger" ng-show="ocModelForm.specFeeAmount.$error.required">必填项</span>\n                        <span class = "text-danger" ng-show="ocModelForm.specFeeAmount.$error.maxlength">超过7位</span>\n                    </div>\n                </div>\n                <div class="form-group  has-feedback" ng-class="{true:\'has-error\'}[ocModelForm.specFeeCurrency.$invalid&&ocModelForm.specFeeCurrency.$dirty]">\n                    <label  class="col-sm-3 control-label">货比类型</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-maxlength="3" ng-required="true" name="specFeeCurrency" ng-model="rowData.specFeeCurrency" upper-input="" class="form-control input-sm">\n                        <oc-input-valid name = "ocModelForm.specFeeCurrency"></oc-input-valid>\n                    </div>\n                    <div class="col-sm-3 pt_tip" ng-show="ocModelForm.specFeeCurrency.$dirty">\n                        <span class = "text-danger"  ng-show="ocModelForm.specFeeCurrency.$error.required">必填项</span>\n                        <span class = "text-danger"  ng-show="ocModelForm.specFeeCurrency.$error.maxlength">超过3位</span>\n                    </div>\n                </div>\n            <%}else if("tb172.html"==value){%>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">大客户编码</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.accountCode" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n            <%}else if("tb173Ticket.html"==value){%>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">指定客票</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.ticketDesignator" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n            <%}else if("tb183.html"==value){%>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">旅行社</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.travelAgency" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">航空公司、分销商</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.carrierGds" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">职责、功能码</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.dutyFunctionCode" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">区域类型</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.geographicSpecificationType" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">区域代码</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.geographicSpecification" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">发布对象类型</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.codeType" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">发布对象代码</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.code" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">权限</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.viewBookTkt" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n            <%}else{%>\n                <h2>表格不支持修改</h2>\n            <%}%>\n            </form>\n        </div>\n        <div class="modal-footer">\n            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>\n            <button type="button" ng-click="submitFunc()" ng-disabled = "ocModelForm.$invalid" class="btn btn-primary">提交更改</button>\n        </div>\n    </div>\n</div>\n\n\n\n');
+define("fare/oc/1.0.0/edit/tpls/tb_row-debug.html", [], '<div class="modal-dialog">\n    <div class="modal-content">\n        <div class="modal-header">\n            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>\n            <h4 class="modal-title" id="myModalLabel" ng-bind="title"></h4>\n        </div>\n        <div class="modal-body">\n            <form  name = "ocModelForm" class="form-horizontal" role="form">\n            <%if("tb170.html"==value){%>\n                <div class="form-group has-feedback">\n                    <label  class="col-sm-3 control-label">销售地类型</label>\n                    <div class="col-sm-6">\n                        <select ng-model="rowData.saleGeographicPointType"\n                                class="form-control input-sm"\n                                ng-options="o.value as o.name for o in selectList.geoLocTypeList">\n                        </select>\n                    </div>\n                </div>\n                <div class="form-group  has-feedback">\n                    <label  class="col-sm-3 control-label">销售地代码</label>\n                    <div class="col-sm-6">\n                        <input type="text"  name="saleGeographicPoint" ng-required="true" ng-model="rowData.saleGeographicPoint" class="form-control input-sm"  >\n                        <oc-input-valid name = "ocModelForm.saleGeographicPoint"></oc-input-valid>\n                    </div>\n                </div>\n                <div class="form-group  has-feedback">\n                    <label  class="col-sm-3 control-label">金额</label>\n                    <div class="col-sm-6">\n                        <input type="text" integer="true" ng-maxlength="7"  ng-required="true" name ="specFeeAmount" ng-model="rowData.specFeeAmount" class="form-control input-sm" >\n                        <oc-input-valid name = "ocModelForm.specFeeAmount"></oc-input-valid>\n                    </div>\n                </div>\n                <div class="form-group  has-feedback">\n                    <label  class="col-sm-3 control-label">货比类型</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-maxlength="3" ng-required="true" name="specFeeCurrency" ng-model="rowData.specFeeCurrency" upper-input="" class="form-control input-sm">\n                        <oc-input-valid name = "ocModelForm.specFeeCurrency"></oc-input-valid>\n                    </div>\n                </div>\n            <%}else if("tb172.html"==value){%>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">大客户编码</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.accountCode" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n            <%}else if("tb173Ticket.html"==value){%>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">指定客票</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.ticketDesignator" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n            <%}else if("tb183.html"==value){%>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">旅行社</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.travelAgency" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">航空公司、分销商</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.carrierGds" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">职责、功能码</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.dutyFunctionCode" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">区域类型</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.geographicSpecificationType" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">区域代码</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.geographicSpecification" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">发布对象类型</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.codeType" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">发布对象代码</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.code" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">权限</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.viewBookTkt" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n            <%}else{%>\n                <h2>表格不支持修改</h2>\n            <%}%>\n            </form>\n        </div>\n        <div class="modal-footer">\n            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>\n            <button type="button" ng-click="submitFunc()" ng-disabled = "ocModelForm.$invalid" class="btn btn-primary">提交更改</button>\n        </div>\n    </div>\n</div>\n\n\n\n');
 
 define("fare/oc/1.0.0/edit/directives/commonDirective-debug", [ "fare/oc/1.0.0/edit/directives/directives-debug", "underscore-debug" ], function(require, exports, module) {
     var directives = require("fare/oc/1.0.0/edit/directives/directives-debug");
@@ -3919,8 +3919,14 @@ define("fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier-debug", [ "fa
         var reset = function(el) {
             angular.forEach(el.find("span"), function(spanEl) {
                 spanEl = angular.element(spanEl);
-                if (spanEl.hasClass("error-msg") || spanEl.hasClass("form-control-feedback") || spanEl.hasClass("control-feedback")) {
+                if (spanEl.hasClass("form-control-feedback") || spanEl.hasClass("control-feedback")) {
                     spanEl.remove();
+                }
+            });
+            angular.forEach(el.find("div"), function(divEl) {
+                divEl = angular.element(divEl);
+                if (divEl.hasClass("has-error error-msg")) {
+                    divEl.remove();
                 }
             });
             el.removeClass("has-success has-error has-feedback");
@@ -3987,23 +3993,38 @@ define("fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier-debug", [ "fa
        * @param {Element} el - The input control element that is the target of the validation.
        */
         makeValid = function(el) {
-            var frmGroupEl = findFormGroupElement(el), inputGroupEl;
-            if (frmGroupEl) {
-                reset(frmGroupEl);
-                inputGroupEl = findInputGroupElement(frmGroupEl[0]);
-                frmGroupEl.addClass("has-success " + (inputGroupEl.length > 0 ? "" : "has-feedback"));
-                if (addValidationStateIcons) {
-                    var iconElText = '<span class="glyphicon glyphicon-ok form-control-feedback"></span>';
-                    if (inputGroupEl.length > 0) {
-                        iconElText = iconElText.replace("form-", "");
-                        iconElText = '<span class="input-group-addon control-feedback">' + iconElText + "</span";
+            var flag = isSelectORadio(el);
+            if (!flag) {
+                var frmGroupEl = findFormGroupElement(el), inputGroupEl;
+                if (frmGroupEl) {
+                    reset(frmGroupEl);
+                    inputGroupEl = findInputGroupElement(frmGroupEl[0]);
+                    frmGroupEl.addClass("has-success " + (inputGroupEl.length > 0 ? "" : "has-feedback"));
+                    if (addValidationStateIcons) {
+                        var iconElText = '<span class="glyphicon glyphicon-ok form-control-feedback"></span>';
+                        if (inputGroupEl.length > 0) {
+                            iconElText = iconElText.replace("form-", "");
+                            iconElText = '<span class="input-group-addon control-feedback">' + iconElText + "</span";
+                        }
+                        var myElement = angular.element(el);
+                        insertAfter(el, angular.element(iconElText));
                     }
-                    insertAfter(el, angular.element(iconElText));
+                } else {
+                    $log.error("Angular-auto-validate: invalid bs3 form structure elements must be wrapped by a form-group class");
                 }
-            } else {
-                $log.error("Angular-auto-validate: invalid bs3 form structure elements must be wrapped by a form-group class");
             }
-        }, /**
+        }, isSelectORadio = function(el) {
+            var flag = false;
+            if (el && el.length > 0) {
+                var jsEl = el[0];
+                var type = jsEl.type;
+                if (type == "radio" || type.indexOf("select") != -1) {
+                    flag = true;
+                }
+            }
+            return flag;
+        };
+        /**
        * @ngdoc function
        * @name bootstrap3ElementModifier#makeInvalid
        * @methodOf bootstrap3ElementModifier
@@ -4016,22 +4037,26 @@ define("fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier-debug", [ "fa
        * @param {Element} el - The input control element that is the target of the validation.
        */
         makeInvalid = function(el, errorMsg) {
-            var frmGroupEl = findFormGroupElement(el), helpTextEl = angular.element('<span class="help-block has-error error-msg">' + errorMsg + "</span>"), inputGroupEl;
-            if (frmGroupEl) {
-                reset(frmGroupEl);
-                inputGroupEl = findInputGroupElement(frmGroupEl[0]);
-                frmGroupEl.addClass("has-error " + (inputGroupEl.length > 0 ? "" : "has-feedback"));
-                insertAfter(inputGroupEl.length > 0 ? inputGroupEl : getCorrectElementToPlaceErrorElementAfter(el), helpTextEl);
-                if (addValidationStateIcons) {
-                    var iconElText = '<span class="glyphicon glyphicon-remove form-control-feedback"></span>';
-                    if (inputGroupEl.length > 0) {
-                        iconElText = iconElText.replace("form-", "");
-                        iconElText = '<span class="input-group-addon control-feedback">' + iconElText + "</span";
+            var flag = isSelectORadio(el);
+            if (!flag) {
+                var frmGroupEl = findFormGroupElement(el), helpTextEl = angular.element('<div class="col-sm-3 help-block has-error error-msg"><small>' + errorMsg + "</small></div>"), inputGroupEl;
+                if (frmGroupEl) {
+                    reset(frmGroupEl);
+                    inputGroupEl = findInputGroupElement(frmGroupEl[0]);
+                    frmGroupEl.addClass("has-error " + (inputGroupEl.length > 0 ? "" : "has-feedback"));
+                    //insertAfter(inputGroupEl.length > 0 ? inputGroupEl : getCorrectElementToPlaceErrorElementAfter(el), helpTextEl);
+                    frmGroupEl.append(helpTextEl);
+                    if (addValidationStateIcons) {
+                        var iconElText = '<span class="glyphicon glyphicon-remove form-control-feedback"></span>';
+                        if (inputGroupEl.length > 0) {
+                            iconElText = iconElText.replace("form-", "");
+                            iconElText = '<span class="input-group-addon control-feedback">' + iconElText + "</span";
+                        }
+                        insertAfter(getCorrectElementToPlaceErrorElementAfter(el), angular.element(iconElText));
                     }
-                    insertAfter(getCorrectElementToPlaceErrorElementAfter(el), angular.element(iconElText));
+                } else {
+                    $log.error("Angular-auto-validate: invalid bs3 form structure elements must be wrapped by a form-group class");
                 }
-            } else {
-                $log.error("Angular-auto-validate: invalid bs3 form structure elements must be wrapped by a form-group class");
             }
         }, getCorrectElementToPlaceErrorElementAfter = function(el) {
             var correctEl = el, elType = el[0].type ? el[0].type.toLowerCase() : "";
@@ -4120,17 +4145,18 @@ define("fare/oc/1.0.0/lib/valid/services/defaultErrorMessageResolver-debug", [ "
         errorMessages: {}
     };
     angular.autoValidate.errorMessages["en-us"] = angular.autoValidate.errorMessages["en-gb"] = {
-        defaultMsg: "Please add error message for {0}",
-        email: "Please enter a valid email address",
-        minlength: "Please enter at least {0} characters",
-        maxlength: "You have entered more than the maximum {0} characters",
-        min: "Please enter the minimum number of {0}",
-        max: "Please enter the maximum number of {0}",
-        required: "This field is required",
-        date: "Please enter a valid date",
-        pattern: "Please ensure the entered information adheres to this pattern {0}",
-        number: "Please enter a valid number",
-        url: "Please enter a valid URL in the format of http(s)://www.google.com"
+        defaultMsg: "请为 {0} 增加错误信息",
+        email: "请输入合法的电子邮箱地址",
+        minlength: "请输入至少 {0} 字符",
+        maxlength: "最多只允许输入 {0} 字符",
+        min: "请输入 {0} 允许的最小数值",
+        max: "请输入 {0} 允许的最大数值",
+        required: "这个字段是必须的",
+        date: "请输入合法日期",
+        pattern: "请确认输入信息符合规则 {0}",
+        number: "请输入一个合法数字",
+        url: "请输入正确的网址",
+        alphanumeric: "请输入字母或数字"
     };
     function DefaultErrorMessageResolverFn($q, $http) {
         var currentCulture = "en-gb", i18nFileRootPath = "js/angular-auto-validate/dist/lang", cultureRetrievalPromise, loadRemoteCulture = function(culture) {

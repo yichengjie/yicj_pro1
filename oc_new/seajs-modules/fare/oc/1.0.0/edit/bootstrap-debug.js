@@ -3987,23 +3987,39 @@ define("fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier-debug", [ "fa
        * @param {Element} el - The input control element that is the target of the validation.
        */
         makeValid = function(el) {
-            var frmGroupEl = findFormGroupElement(el), inputGroupEl;
-            if (frmGroupEl) {
-                reset(frmGroupEl);
-                inputGroupEl = findInputGroupElement(frmGroupEl[0]);
-                frmGroupEl.addClass("has-success " + (inputGroupEl.length > 0 ? "" : "has-feedback"));
-                if (addValidationStateIcons) {
-                    var iconElText = '<span class="glyphicon glyphicon-ok form-control-feedback"></span>';
-                    if (inputGroupEl.length > 0) {
-                        iconElText = iconElText.replace("form-", "");
-                        iconElText = '<span class="input-group-addon control-feedback">' + iconElText + "</span";
+            var flag = isSelectORadio(el);
+            if (!flag) {
+                var frmGroupEl = findFormGroupElement(el), inputGroupEl;
+                if (frmGroupEl) {
+                    reset(frmGroupEl);
+                    inputGroupEl = findInputGroupElement(frmGroupEl[0]);
+                    frmGroupEl.addClass("has-success " + (inputGroupEl.length > 0 ? "" : "has-feedback"));
+                    if (addValidationStateIcons) {
+                        var iconElText = '<span class="glyphicon glyphicon-ok form-control-feedback"></span>';
+                        if (inputGroupEl.length > 0) {
+                            iconElText = iconElText.replace("form-", "");
+                            iconElText = '<span class="input-group-addon control-feedback">' + iconElText + "</span";
+                        }
+                        var myElement = angular.element(el);
+                        console.info(el[0].type);
+                        insertAfter(el, angular.element(iconElText));
                     }
-                    insertAfter(el, angular.element(iconElText));
+                } else {
+                    $log.error("Angular-auto-validate: invalid bs3 form structure elements must be wrapped by a form-group class");
                 }
-            } else {
-                $log.error("Angular-auto-validate: invalid bs3 form structure elements must be wrapped by a form-group class");
             }
-        }, /**
+        }, isSelectORadio = function(el) {
+            var flag = false;
+            if (el && el.length > 0) {
+                var jsEl = el[0];
+                var type = jsEl.type;
+                if (type == "radio" || type.indexOf("select") != -1) {
+                    flag = true;
+                }
+            }
+            return flag;
+        };
+        /**
        * @ngdoc function
        * @name bootstrap3ElementModifier#makeInvalid
        * @methodOf bootstrap3ElementModifier
@@ -4016,22 +4032,25 @@ define("fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier-debug", [ "fa
        * @param {Element} el - The input control element that is the target of the validation.
        */
         makeInvalid = function(el, errorMsg) {
-            var frmGroupEl = findFormGroupElement(el), helpTextEl = angular.element('<span class="help-block has-error error-msg">' + errorMsg + "</span>"), inputGroupEl;
-            if (frmGroupEl) {
-                reset(frmGroupEl);
-                inputGroupEl = findInputGroupElement(frmGroupEl[0]);
-                frmGroupEl.addClass("has-error " + (inputGroupEl.length > 0 ? "" : "has-feedback"));
-                insertAfter(inputGroupEl.length > 0 ? inputGroupEl : getCorrectElementToPlaceErrorElementAfter(el), helpTextEl);
-                if (addValidationStateIcons) {
-                    var iconElText = '<span class="glyphicon glyphicon-remove form-control-feedback"></span>';
-                    if (inputGroupEl.length > 0) {
-                        iconElText = iconElText.replace("form-", "");
-                        iconElText = '<span class="input-group-addon control-feedback">' + iconElText + "</span";
+            var flag = isSelectORadio(el);
+            if (!flag) {
+                var frmGroupEl = findFormGroupElement(el), helpTextEl = angular.element('<span class="help-block has-error error-msg">' + errorMsg + "</span>"), inputGroupEl;
+                if (frmGroupEl) {
+                    reset(frmGroupEl);
+                    inputGroupEl = findInputGroupElement(frmGroupEl[0]);
+                    frmGroupEl.addClass("has-error " + (inputGroupEl.length > 0 ? "" : "has-feedback"));
+                    insertAfter(inputGroupEl.length > 0 ? inputGroupEl : getCorrectElementToPlaceErrorElementAfter(el), helpTextEl);
+                    if (addValidationStateIcons) {
+                        var iconElText = '<span class="glyphicon glyphicon-remove form-control-feedback"></span>';
+                        if (inputGroupEl.length > 0) {
+                            iconElText = iconElText.replace("form-", "");
+                            iconElText = '<span class="input-group-addon control-feedback">' + iconElText + "</span";
+                        }
+                        insertAfter(getCorrectElementToPlaceErrorElementAfter(el), angular.element(iconElText));
                     }
-                    insertAfter(getCorrectElementToPlaceErrorElementAfter(el), angular.element(iconElText));
+                } else {
+                    $log.error("Angular-auto-validate: invalid bs3 form structure elements must be wrapped by a form-group class");
                 }
-            } else {
-                $log.error("Angular-auto-validate: invalid bs3 form structure elements must be wrapped by a form-group class");
             }
         }, getCorrectElementToPlaceErrorElementAfter = function(el) {
             var correctEl = el, elType = el[0].type ? el[0].type.toLowerCase() : "";
