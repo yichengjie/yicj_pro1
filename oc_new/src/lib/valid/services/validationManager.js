@@ -138,6 +138,19 @@ define(function(require, exports, module){
               resetForm(ctrlElement);
             } else {
               controller.$setPristine();
+              //这个地方仅设置为原始状态任然不行，因为model的错误提示信息没有被清除//下面这样直接设置为true也不行，初始状态将不进行element的校验
+              /*controller.$setValidity('email',true) ;
+              controller.$setValidity('minlength',true) ;
+              controller.$setValidity('maxlength',true) ;
+              controller.$setValidity('min',true) ;
+              controller.$setValidity('max',true) ;
+              controller.$setValidity('required',true) ;
+              controller.$setValidity('date',true) ;
+              controller.$setValidity('pattern',true) ;
+              controller.$setValidity('number',true) ;
+              controller.$setValidity('url',true) ;
+              controller.$setValidity('alphanumeric',true) ;
+              controller.$setValidity('integer',true) ;*/
             }
           }
         });

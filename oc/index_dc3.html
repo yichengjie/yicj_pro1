@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap/css/bootstrap.css"/>
+    <script type="text/javascript" src="../lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../lib/angular-1.4.js"></script>
+    <script type="text/javascript" src="../lib/bootstrap.js"></script>
+    <script type="text/javascript" src="../lib/underscore.js"></script>
+    <style>
+        body{
+            font-size: 12px;
+        }
+        .pt_tip{
+            padding-top: 5px;
+        }
+        .myhand{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body ng-app="app">
+
+<div  ng-controller="IndexController" class = "container-fluid" style="padding-top: 64px; ">
+    <!-- 页面第一部分开始 -->
+    <!--页面第一部分结束 -->
+    <form action="" name="ocForm" class="form-horizontal" novalidate role="form">
+        <!-- 页面第二部分开始 -->
+
+        <div class="form-group has-feedback" ng-class="{true:'has-error',false:''}[ocForm.test1.$invalid&&ocForm.test1.$dirty]">
+            <label  class="col-sm-3 control-label">Email</label>
+            <div class="col-sm-5">
+                <input type="text"  class="form-control" name="test1" ng-model="data.test1" ng-required="true" ng-maxlength="3"><br />
+            </div>
+            <div class="col-sm-2 help-block">
+                <span class="text-danger" ng-show="ocForm.test1.$error.required&&ocForm.test1.$dirty"><small>必填项</small></span>
+                <span class = "text-danger" ng-show="ocForm.test1.$error.maxlength&&ocForm.test1.$dirty"><small>最大长度为3位</small></span>
+            </div>
+        </div>
+
+        <div class="form-group  has-feedback" ng-class="{true:'has-error',false:''}[ocForm.test2.$invalid&&ocForm.test2.$dirty]">
+            <label  class="col-sm-3 control-label">生效日期{{ocForm.myStratDate.$invalid}}</label>
+            <div class="col-sm-5">
+                <input type="text"  ng-required="true" ng-maxlength="3" ng-model="data.test2" name ="test2" class="form-control">
+                <span ng-if="ocForm.test2.$invalid&&ocForm.test2.$dirty" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
+            </div>
+            <div class="col-sm-2 help-block">
+                <span class="text-danger" ng-show="ocForm.test2.$error.required&&ocForm.test2.$dirty"><small>必填项</small></span>
+                <span class = "text-danger" ng-show="ocForm.test2.$error.maxlength&&ocForm.test2.$dirty"><small>最大长度为3位</small></span>
+            </div>
+        </div>
+
+    </form>
+
+    <button class="btn btn-success col-sm-offset-3" ng-click="submitMyForm()">提交</button>
+</div>
+
+</body>
+<script type="text/javascript" src="index_dc3.js"></script>
+</html>

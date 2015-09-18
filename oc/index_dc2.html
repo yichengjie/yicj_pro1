@@ -99,7 +99,7 @@
         </div>
     </div>
     <!--页面第一部分结束 -->
-    <form action="" class="form-horizontal" role="form">
+    <form action="" name="ocForm" class="form-horizontal" novalidate role="form">
         <!-- 页面第二部分开始 -->
         <div class="panel panel-info">
             <div class="panel-heading">
@@ -109,15 +109,15 @@
             </div>
             <div class="panel-body">
                 <div class="row">
-                    <div class="form-group col-sm-6  has-success has-feedback">
-                        <label for="inputEmail3" class="col-sm-3 control-label">生效日期</label>
+                    <div class="form-group  col-sm-6 has-feedback" ng-class="{true:'has-error',false:''}[ocForm.myStratDate.$invalid]">
+                        <label  class="col-sm-3 control-label">生效日期{{ocForm.myStratDate.$invalid}}</label>
                         <div class="col-sm-5">
-                            <input type="text" class="form-control input-sm" id="inputSuccess2" aria-describedby="inputSuccess2Status">
-                            <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>
-                            <span  class="sr-only">(success)</span>
+                            <input type="text"  ng-required="true" ng-maxlength="3" name ="myStratDate"
+                                   class="form-control input-sm"  aria-describedby="inputSuccess2Status">
+                            <span ng-if="ocForm.myStratDate.$invalid" class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"></span>
                         </div>
                         <div class="col-sm-3 pt_tip">
-                            <span class = "text-danger">必填项</span>
+                            <span class = "text-danger" ng-show="ocForm.myStratDate.$error.maxlength">必填项</span>
                         </div>
                     </div>
 

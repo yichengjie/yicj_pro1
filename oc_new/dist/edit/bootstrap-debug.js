@@ -1,4 +1,4 @@
-define("fare/oc/1.0.0/edit/bootstrap-debug", [ "./app-debug", "./services/services-debug", "./controllers/index-debug", "./controllers/eidtController-debug", "./controllers/controllers-debug", "./directives/index-debug", "./directives/tableDirective-debug", "./directives/directives-debug", "./tpls/tb_btnAdd-debug.html", "./tpls/tb_btnUpdate-debug.html", "./tpls/tb_btnDelete-debug.html", "./tpls/tb_row-debug.html", "underscore-debug", "./directives/commonDirective-debug", "./directives/validDirective-debug", "../lib/module-debug", "../lib/helpers/compiler-debug", "../lib/helpers/date-formatter-debug", "../lib/helpers/date-parser-debug", "../lib/helpers/debounce-debug", "../lib/helpers/dimensions-debug", "../lib/helpers/parse-options-debug", "../lib/helpers/raf-debug", "../lib/datepicker/datepicker-debug", "../lib/datepicker/datepicker.tpl-debug.html", "../lib/timepicker/timepicker-debug", "../lib/timepicker/timepicker.tpl-debug.html", "../lib/tooltip/tooltip-debug", "../lib/tooltip/tooltip.tpl-debug.html", "../lib/valid/index-debug", "../lib/valid/config/index-debug", "../lib/valid/config/ngModelDecorator-debug", "../lib/valid/jcs-auto-validate-debug", "../lib/valid/config/ngSubmitDecorator-debug", "../lib/valid/directives/index-debug", "../lib/valid/directives/autoValidateFormOptions-debug", "../lib/valid/directives/formReset-debug", "../lib/valid/directives/registerCustomFormControl-debug", "../lib/valid/providers/validator-debug", "../lib/valid/services/index-debug", "../lib/valid/services/bootstrap3ElementModifier-debug", "../lib/valid/services/debounce-debug", "../lib/valid/services/defaultErrorMessageResolver-debug", "../lib/valid/services/foundation5ElementModifier-debug", "../lib/valid/services/validationManager-debug" ], function(require, exports, module) {
+define("fare/oc/1.0.0/edit/bootstrap-debug", [ "./app-debug", "./services/services-debug", "./controllers/index-debug", "./controllers/eidtController-debug", "./controllers/controllers-debug", "./directives/index-debug", "./directives/tableDirective-debug", "./directives/directives-debug", "./tpls/tb_btnAdd-debug.html", "./tpls/tb_btnUpdate-debug.html", "./tpls/tb_btnDelete-debug.html", "./tpls/tb_row-debug.html", "underscore-debug", "./directives/commonDirective-debug", "./directives/validDirective-debug", "../lib/module-debug", "../lib/helpers/compiler-debug", "../lib/helpers/date-formatter-debug", "../lib/helpers/date-parser-debug", "../lib/helpers/debounce-debug", "../lib/helpers/dimensions-debug", "../lib/helpers/parse-options-debug", "../lib/helpers/raf-debug", "../lib/datepicker/datepicker-debug", "../lib/datepicker/datepicker.tpl-debug.html", "../lib/timepicker/timepicker-debug", "../lib/timepicker/timepicker.tpl-debug.html", "../lib/tooltip/tooltip-debug", "../lib/tooltip/tooltip.tpl-debug.html", "../lib/valid/index-debug", "../lib/valid/config/index-debug", "../lib/valid/config/ngModelDecorator-debug", "../lib/valid/jcs-auto-validate-debug", "../lib/valid/config/ngSubmitDecorator-debug", "../lib/valid/directives/index-debug", "../lib/valid/directives/autoValidateFormOptions-debug", "../lib/valid/directives/formReset-debug", "../lib/valid/directives/registerCustomFormControl-debug", "../lib/valid/providers/validator-debug", "../lib/valid/services/index-debug", "../lib/valid/services/bootstrap3ElementModifier_modify-debug", "../lib/valid/services/debounce-debug", "../lib/valid/services/defaultErrorMessageResolver-debug", "../lib/valid/services/foundation5ElementModifier-debug", "../lib/valid/services/validationManager-debug" ], function(require, exports, module) {
     require("./app-debug");
     module.exports = {
         init: function() {
@@ -9,7 +9,7 @@ define("fare/oc/1.0.0/edit/bootstrap-debug", [ "./app-debug", "./services/servic
     };
 });
 
-define("fare/oc/1.0.0/edit/app-debug", [ "fare/oc/1.0.0/edit/services/services-debug", "fare/oc/1.0.0/edit/controllers/index-debug", "fare/oc/1.0.0/edit/controllers/eidtController-debug", "fare/oc/1.0.0/edit/controllers/controllers-debug", "fare/oc/1.0.0/edit/directives/index-debug", "fare/oc/1.0.0/edit/directives/tableDirective-debug", "fare/oc/1.0.0/edit/directives/directives-debug", "underscore-debug", "fare/oc/1.0.0/edit/directives/commonDirective-debug", "fare/oc/1.0.0/edit/directives/validDirective-debug", "fare/oc/1.0.0/lib/module-debug", "fare/oc/1.0.0/lib/helpers/compiler-debug", "fare/oc/1.0.0/lib/helpers/date-formatter-debug", "fare/oc/1.0.0/lib/helpers/date-parser-debug", "fare/oc/1.0.0/lib/helpers/debounce-debug", "fare/oc/1.0.0/lib/helpers/dimensions-debug", "fare/oc/1.0.0/lib/helpers/parse-options-debug", "fare/oc/1.0.0/lib/helpers/raf-debug", "fare/oc/1.0.0/lib/datepicker/datepicker-debug", "fare/oc/1.0.0/lib/timepicker/timepicker-debug", "fare/oc/1.0.0/lib/tooltip/tooltip-debug", "fare/oc/1.0.0/lib/valid/index-debug", "fare/oc/1.0.0/lib/valid/config/index-debug", "fare/oc/1.0.0/lib/valid/config/ngModelDecorator-debug", "fare/oc/1.0.0/lib/valid/jcs-auto-validate-debug", "fare/oc/1.0.0/lib/valid/config/ngSubmitDecorator-debug", "fare/oc/1.0.0/lib/valid/directives/index-debug", "fare/oc/1.0.0/lib/valid/directives/autoValidateFormOptions-debug", "fare/oc/1.0.0/lib/valid/directives/formReset-debug", "fare/oc/1.0.0/lib/valid/directives/registerCustomFormControl-debug", "fare/oc/1.0.0/lib/valid/providers/validator-debug", "fare/oc/1.0.0/lib/valid/services/index-debug", "fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier-debug", "fare/oc/1.0.0/lib/valid/services/debounce-debug", "fare/oc/1.0.0/lib/valid/services/defaultErrorMessageResolver-debug", "fare/oc/1.0.0/lib/valid/services/foundation5ElementModifier-debug", "fare/oc/1.0.0/lib/valid/services/validationManager-debug" ], function(require, exports, module) {
+define("fare/oc/1.0.0/edit/app-debug", [ "fare/oc/1.0.0/edit/services/services-debug", "fare/oc/1.0.0/edit/controllers/index-debug", "fare/oc/1.0.0/edit/controllers/eidtController-debug", "fare/oc/1.0.0/edit/controllers/controllers-debug", "fare/oc/1.0.0/edit/directives/index-debug", "fare/oc/1.0.0/edit/directives/tableDirective-debug", "fare/oc/1.0.0/edit/directives/directives-debug", "underscore-debug", "fare/oc/1.0.0/edit/directives/commonDirective-debug", "fare/oc/1.0.0/edit/directives/validDirective-debug", "fare/oc/1.0.0/lib/module-debug", "fare/oc/1.0.0/lib/helpers/compiler-debug", "fare/oc/1.0.0/lib/helpers/date-formatter-debug", "fare/oc/1.0.0/lib/helpers/date-parser-debug", "fare/oc/1.0.0/lib/helpers/debounce-debug", "fare/oc/1.0.0/lib/helpers/dimensions-debug", "fare/oc/1.0.0/lib/helpers/parse-options-debug", "fare/oc/1.0.0/lib/helpers/raf-debug", "fare/oc/1.0.0/lib/datepicker/datepicker-debug", "fare/oc/1.0.0/lib/timepicker/timepicker-debug", "fare/oc/1.0.0/lib/tooltip/tooltip-debug", "fare/oc/1.0.0/lib/valid/index-debug", "fare/oc/1.0.0/lib/valid/config/index-debug", "fare/oc/1.0.0/lib/valid/config/ngModelDecorator-debug", "fare/oc/1.0.0/lib/valid/jcs-auto-validate-debug", "fare/oc/1.0.0/lib/valid/config/ngSubmitDecorator-debug", "fare/oc/1.0.0/lib/valid/directives/index-debug", "fare/oc/1.0.0/lib/valid/directives/autoValidateFormOptions-debug", "fare/oc/1.0.0/lib/valid/directives/formReset-debug", "fare/oc/1.0.0/lib/valid/directives/registerCustomFormControl-debug", "fare/oc/1.0.0/lib/valid/providers/validator-debug", "fare/oc/1.0.0/lib/valid/services/index-debug", "fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier_modify-debug", "fare/oc/1.0.0/lib/valid/services/debounce-debug", "fare/oc/1.0.0/lib/valid/services/defaultErrorMessageResolver-debug", "fare/oc/1.0.0/lib/valid/services/foundation5ElementModifier-debug", "fare/oc/1.0.0/lib/valid/services/validationManager-debug" ], function(require, exports, module) {
     require("fare/oc/1.0.0/edit/services/services-debug");
     require("fare/oc/1.0.0/edit/controllers/index-debug");
     require("fare/oc/1.0.0/edit/directives/index-debug");
@@ -406,6 +406,7 @@ define("fare/oc/1.0.0/edit/controllers/eidtController-debug", [ "fare/oc/1.0.0/e
         $scope.submitForm = function(type) {
             console.info("保存保单数据 :type : " + type);
             var flag = $scope.ocForm.$valid;
+            $scope.ocForm.lastMaintenanceDate.$dirty = true;
             console.info("flag : " + flag);
         };
         /*********这一部分属于页面所有的静态的select框开始部分**************/
@@ -473,6 +474,113 @@ define("fare/oc/1.0.0/edit/controllers/eidtController-debug", [ "fare/oc/1.0.0/e
             name: "净价",
             value: "N"
         } ];
+        //舱位list集合
+        $scope.cabinList = [ {
+            name: "选择",
+            value: ""
+        }, {
+            name: "R-豪华头等舱",
+            value: "R"
+        }, {
+            name: "F-头等舱",
+            value: "F"
+        }, {
+            name: "J-豪华商务舱",
+            value: "J"
+        }, {
+            name: "C-商务舱",
+            value: "C"
+        }, {
+            name: "P-豪华经济舱",
+            value: "P"
+        }, {
+            name: "Y-经济舱",
+            value: "Y"
+        } ];
+        //退/改
+        $scope.indicatorReissueRefundList = [ {
+            name: "选择",
+            value: ""
+        }, {
+            name: "不可退款",
+            value: "N"
+        }, {
+            name: "可退款",
+            value: "Y"
+        }, {
+            name: "不可退款，下一次购票可同EMD单出",
+            value: "R"
+        } ];
+        //退款形式
+        $scope.formOfRefundList = [ {
+            name: "选择",
+            value: ""
+        }, {
+            name: "按原付款渠道退款",
+            value: "1"
+        }, {
+            name: "按电子凭证退款",
+            value: "2"
+        } ];
+        $scope.geoSpecSectPortJourneyList = [ {
+            name: "选择",
+            value: ""
+        }, {
+            name: "区域",
+            value: "S"
+        }, {
+            name: "部分",
+            value: "P"
+        }, {
+            name: "全程",
+            value: "J"
+        } ];
+        $scope.geoSpecExceptionStopUnitList = [ {
+            name: "选择",
+            value: ""
+        }, {
+            name: "分",
+            value: "N"
+        }, {
+            name: "小时",
+            value: "H"
+        }, {
+            name: "天",
+            value: "D"
+        }, {
+            name: "周",
+            value: "W"
+        }, {
+            name: "月",
+            value: "M"
+        } ];
+        $scope.timeApplicationList = [ {
+            name: "选择",
+            value: ""
+        }, {
+            name: "分别",
+            value: "D"
+        }, {
+            name: "之间",
+            value: "R"
+        } ];
+        $scope.selectedIcon = "";
+        $scope.selectedIcons = [ "Globe", "Heart" ];
+        $scope.icons = [ {
+            value: "Gear",
+            label: "Gear"
+        }, {
+            value: "Globe",
+            label: "Globe"
+        }, {
+            value: "Heart",
+            label: "Heart"
+        }, {
+            value: "Camera",
+            label: "Camera"
+        } ];
+        $scope.selectedMonth = 0;
+        $scope.months = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
     } ]);
 });
 
@@ -601,7 +709,7 @@ define("fare/oc/1.0.0/edit/tpls/tb_btnUpdate-debug.html", [], '<span class="glyp
 
 define("fare/oc/1.0.0/edit/tpls/tb_btnDelete-debug.html", [], '<span class="glyphicon glyphicon-remove myhand text-danger"\n      aria-hidden="true" data-toggle="tooltip" title="删除"></span>');
 
-define("fare/oc/1.0.0/edit/tpls/tb_row-debug.html", [], '<div class="modal-dialog">\n    <div class="modal-content">\n        <div class="modal-header">\n            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>\n            <h4 class="modal-title" id="myModalLabel" ng-bind="title"></h4>\n        </div>\n        <div class="modal-body">\n            <form  name = "ocModelForm" class="form-horizontal" role="form">\n            <%if("tb170.html"==value){%>\n                <div class="form-group has-feedback">\n                    <label  class="col-sm-3 control-label">销售地类型</label>\n                    <div class="col-sm-6">\n                        <select ng-model="rowData.saleGeographicPointType"\n                                class="form-control input-sm"\n                                ng-options="o.value as o.name for o in selectList.geoLocTypeList">\n                        </select>\n                    </div>\n                </div>\n                <div class="form-group  has-feedback">\n                    <label  class="col-sm-3 control-label">销售地代码</label>\n                    <div class="col-sm-6">\n                        <input type="text"  name="saleGeographicPoint" ng-required="true" ng-model="rowData.saleGeographicPoint" class="form-control input-sm"  >\n                        <oc-input-valid name = "ocModelForm.saleGeographicPoint"></oc-input-valid>\n                    </div>\n                </div>\n                <div class="form-group  has-feedback">\n                    <label  class="col-sm-3 control-label">金额</label>\n                    <div class="col-sm-6">\n                        <input type="text" integer="true" ng-maxlength="7"  ng-required="true" name ="specFeeAmount" ng-model="rowData.specFeeAmount" class="form-control input-sm" >\n                        <oc-input-valid name = "ocModelForm.specFeeAmount"></oc-input-valid>\n                    </div>\n                </div>\n                <div class="form-group  has-feedback">\n                    <label  class="col-sm-3 control-label">货比类型</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-maxlength="3" ng-required="true" name="specFeeCurrency" ng-model="rowData.specFeeCurrency" upper-input="" class="form-control input-sm">\n                        <oc-input-valid name = "ocModelForm.specFeeCurrency"></oc-input-valid>\n                    </div>\n                </div>\n            <%}else if("tb172.html"==value){%>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">大客户编码</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.accountCode" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n            <%}else if("tb173Ticket.html"==value){%>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">指定客票</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.ticketDesignator" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n            <%}else if("tb183.html"==value){%>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">旅行社</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.travelAgency" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">航空公司、分销商</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.carrierGds" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">职责、功能码</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.dutyFunctionCode" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">区域类型</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.geographicSpecificationType" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">区域代码</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.geographicSpecification" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">发布对象类型</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.codeType" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">发布对象代码</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.code" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">权限</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.viewBookTkt" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n            <%}else{%>\n                <h2>表格不支持修改</h2>\n            <%}%>\n            </form>\n        </div>\n        <div class="modal-footer">\n            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>\n            <button type="button" ng-click="submitFunc()" ng-disabled = "ocModelForm.$invalid" class="btn btn-primary">提交更改</button>\n        </div>\n    </div>\n</div>\n\n\n\n');
+define("fare/oc/1.0.0/edit/tpls/tb_row-debug.html", [], '<div class="modal-dialog">\n    <div class="modal-content">\n        <div class="modal-header">\n            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>\n            <h4 class="modal-title" id="myModalLabel" ng-bind="title"></h4>\n        </div>\n        <div class="modal-body">\n            <form  name = "ocModelForm" class="form-horizontal" role="form">\n            <%if("tb170.html"==value){%>\n                <div class="form-group has-feedback">\n                    <label  class="col-sm-3 control-label">销售地类型</label>\n                    <div class="col-sm-6">\n                        <select ng-model="rowData.saleGeographicPointType"\n                                class="form-control input-sm"\n                                ng-options="o.value as o.name for o in selectList.geoLocTypeList">\n                        </select>\n                    </div>\n                </div>\n                <div class="form-group  has-feedback">\n                    <label  class="col-sm-3 control-label">销售地代码</label>\n                    <div class="col-sm-6">\n                        <input type="text"  name="saleGeographicPoint" ng-required="true" ng-model="rowData.saleGeographicPoint" class="form-control input-sm"  >\n                    </div>\n                </div>\n                <div class="form-group  has-feedback">\n                    <label  class="col-sm-3 control-label">金额</label>\n                    <div class="col-sm-6">\n                        <input type="text" integer="true" ng-maxlength="7"  ng-required="true" name ="specFeeAmount" ng-model="rowData.specFeeAmount" class="form-control input-sm" >\n                    </div>\n                </div>\n                <div class="form-group  has-feedback">\n                    <label  class="col-sm-3 control-label">货比类型</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-maxlength="3" ng-required="true" name="specFeeCurrency" ng-model="rowData.specFeeCurrency" upper-input="" class="form-control input-sm">\n                    </div>\n                </div>\n            <%}else if("tb172.html"==value){%>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">大客户编码</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.accountCode" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n            <%}else if("tb173Ticket.html"==value){%>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">指定客票</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.ticketDesignator" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n            <%}else if("tb183.html"==value){%>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">旅行社</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.travelAgency" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">航空公司、分销商</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.carrierGds" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">职责、功能码</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.dutyFunctionCode" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">区域类型</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.geographicSpecificationType" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">区域代码</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.geographicSpecification" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">发布对象类型</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.codeType" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">发布对象代码</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.code" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n                <div class="form-group   has-success has-feedback">\n                    <label  class="col-sm-3 control-label">权限</label>\n                    <div class="col-sm-6">\n                        <input type="text" ng-model="rowData.viewBookTkt" class="form-control input-sm"  aria-describedby="inputSuccess2Status">\n                        <span class="glyphicon glyphicon-ok form-control-feedback" aria-hidden="true"></span>\n                    </div>\n                    <div class="col-sm-3 pt_tip">\n                        <span class = "text-danger">必填项</span>\n                    </div>\n                </div>\n            <%}else{%>\n                <h2>表格不支持修改</h2>\n            <%}%>\n            </form>\n        </div>\n        <div class="modal-footer">\n            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>\n            <button type="button" ng-click="submitFunc()" ng-disabled = "ocModelForm.$invalid" class="btn btn-primary">提交更改</button>\n        </div>\n    </div>\n</div>\n\n\n\n');
 
 define("fare/oc/1.0.0/edit/directives/commonDirective-debug", [ "fare/oc/1.0.0/edit/directives/directives-debug", "underscore-debug" ], function(require, exports, module) {
     var directives = require("fare/oc/1.0.0/edit/directives/directives-debug");
@@ -742,7 +850,7 @@ define("fare/oc/1.0.0/edit/directives/validDirective-debug", [ "fare/oc/1.0.0/ed
     } ]);
 });
 
-define("fare/oc/1.0.0/lib/module-debug", [ "fare/oc/1.0.0/lib/helpers/compiler-debug", "fare/oc/1.0.0/lib/helpers/date-formatter-debug", "fare/oc/1.0.0/lib/helpers/date-parser-debug", "fare/oc/1.0.0/lib/helpers/debounce-debug", "fare/oc/1.0.0/lib/helpers/dimensions-debug", "fare/oc/1.0.0/lib/helpers/parse-options-debug", "fare/oc/1.0.0/lib/helpers/raf-debug", "fare/oc/1.0.0/lib/datepicker/datepicker-debug", "fare/oc/1.0.0/lib/timepicker/timepicker-debug", "fare/oc/1.0.0/lib/tooltip/tooltip-debug", "fare/oc/1.0.0/lib/valid/index-debug", "fare/oc/1.0.0/lib/valid/config/index-debug", "fare/oc/1.0.0/lib/valid/config/ngModelDecorator-debug", "fare/oc/1.0.0/lib/valid/jcs-auto-validate-debug", "fare/oc/1.0.0/lib/valid/config/ngSubmitDecorator-debug", "fare/oc/1.0.0/lib/valid/directives/index-debug", "fare/oc/1.0.0/lib/valid/directives/autoValidateFormOptions-debug", "fare/oc/1.0.0/lib/valid/directives/formReset-debug", "fare/oc/1.0.0/lib/valid/directives/registerCustomFormControl-debug", "fare/oc/1.0.0/lib/valid/providers/validator-debug", "fare/oc/1.0.0/lib/valid/services/index-debug", "fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier-debug", "fare/oc/1.0.0/lib/valid/services/debounce-debug", "fare/oc/1.0.0/lib/valid/services/defaultErrorMessageResolver-debug", "fare/oc/1.0.0/lib/valid/services/foundation5ElementModifier-debug", "fare/oc/1.0.0/lib/valid/services/validationManager-debug" ], function(require, exports, module) {
+define("fare/oc/1.0.0/lib/module-debug", [ "fare/oc/1.0.0/lib/helpers/compiler-debug", "fare/oc/1.0.0/lib/helpers/date-formatter-debug", "fare/oc/1.0.0/lib/helpers/date-parser-debug", "fare/oc/1.0.0/lib/helpers/debounce-debug", "fare/oc/1.0.0/lib/helpers/dimensions-debug", "fare/oc/1.0.0/lib/helpers/parse-options-debug", "fare/oc/1.0.0/lib/helpers/raf-debug", "fare/oc/1.0.0/lib/datepicker/datepicker-debug", "fare/oc/1.0.0/lib/timepicker/timepicker-debug", "fare/oc/1.0.0/lib/tooltip/tooltip-debug", "fare/oc/1.0.0/lib/valid/index-debug", "fare/oc/1.0.0/lib/valid/config/index-debug", "fare/oc/1.0.0/lib/valid/config/ngModelDecorator-debug", "fare/oc/1.0.0/lib/valid/jcs-auto-validate-debug", "fare/oc/1.0.0/lib/valid/config/ngSubmitDecorator-debug", "fare/oc/1.0.0/lib/valid/directives/index-debug", "fare/oc/1.0.0/lib/valid/directives/autoValidateFormOptions-debug", "fare/oc/1.0.0/lib/valid/directives/formReset-debug", "fare/oc/1.0.0/lib/valid/directives/registerCustomFormControl-debug", "fare/oc/1.0.0/lib/valid/providers/validator-debug", "fare/oc/1.0.0/lib/valid/services/index-debug", "fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier_modify-debug", "fare/oc/1.0.0/lib/valid/services/debounce-debug", "fare/oc/1.0.0/lib/valid/services/defaultErrorMessageResolver-debug", "fare/oc/1.0.0/lib/valid/services/foundation5ElementModifier-debug", "fare/oc/1.0.0/lib/valid/services/validationManager-debug" ], function(require, exports, module) {
     //工具类
     require("fare/oc/1.0.0/lib/helpers/compiler-debug");
     require("fare/oc/1.0.0/lib/helpers/date-formatter-debug");
@@ -3359,7 +3467,7 @@ define("fare/oc/1.0.0/lib/tooltip/tooltip-debug", [], function(require, exports,
 
 define("fare/oc/1.0.0/lib/tooltip/tooltip.tpl-debug.html", [], '<div class="tooltip in" ng-show="title">\n  <div class="tooltip-arrow"></div>\n  <div class="tooltip-inner" ng-bind="title"></div>\n</div>\n');
 
-define("fare/oc/1.0.0/lib/valid/index-debug", [ "fare/oc/1.0.0/lib/valid/config/index-debug", "fare/oc/1.0.0/lib/valid/config/ngModelDecorator-debug", "fare/oc/1.0.0/lib/valid/jcs-auto-validate-debug", "fare/oc/1.0.0/lib/valid/config/ngSubmitDecorator-debug", "fare/oc/1.0.0/lib/valid/directives/index-debug", "fare/oc/1.0.0/lib/valid/directives/autoValidateFormOptions-debug", "fare/oc/1.0.0/lib/valid/directives/formReset-debug", "fare/oc/1.0.0/lib/valid/directives/registerCustomFormControl-debug", "fare/oc/1.0.0/lib/valid/providers/validator-debug", "fare/oc/1.0.0/lib/valid/services/index-debug", "fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier-debug", "fare/oc/1.0.0/lib/valid/services/debounce-debug", "fare/oc/1.0.0/lib/valid/services/defaultErrorMessageResolver-debug", "fare/oc/1.0.0/lib/valid/services/foundation5ElementModifier-debug", "fare/oc/1.0.0/lib/valid/services/validationManager-debug" ], function(require, exports, module) {
+define("fare/oc/1.0.0/lib/valid/index-debug", [ "fare/oc/1.0.0/lib/valid/config/index-debug", "fare/oc/1.0.0/lib/valid/config/ngModelDecorator-debug", "fare/oc/1.0.0/lib/valid/jcs-auto-validate-debug", "fare/oc/1.0.0/lib/valid/config/ngSubmitDecorator-debug", "fare/oc/1.0.0/lib/valid/directives/index-debug", "fare/oc/1.0.0/lib/valid/directives/autoValidateFormOptions-debug", "fare/oc/1.0.0/lib/valid/directives/formReset-debug", "fare/oc/1.0.0/lib/valid/directives/registerCustomFormControl-debug", "fare/oc/1.0.0/lib/valid/providers/validator-debug", "fare/oc/1.0.0/lib/valid/services/index-debug", "fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier_modify-debug", "fare/oc/1.0.0/lib/valid/services/debounce-debug", "fare/oc/1.0.0/lib/valid/services/defaultErrorMessageResolver-debug", "fare/oc/1.0.0/lib/valid/services/foundation5ElementModifier-debug", "fare/oc/1.0.0/lib/valid/services/validationManager-debug" ], function(require, exports, module) {
     //var app = require("./index") ;
     require("fare/oc/1.0.0/lib/valid/config/index-debug");
     require("fare/oc/1.0.0/lib/valid/directives/index-debug");
@@ -3905,15 +4013,15 @@ define("fare/oc/1.0.0/lib/valid/providers/validator-debug", [ "fare/oc/1.0.0/lib
     app.provider("validator", ValidatorFn);
 });
 
-define("fare/oc/1.0.0/lib/valid/services/index-debug", [ "fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier-debug", "fare/oc/1.0.0/lib/valid/jcs-auto-validate-debug", "fare/oc/1.0.0/lib/valid/services/debounce-debug", "fare/oc/1.0.0/lib/valid/services/defaultErrorMessageResolver-debug", "fare/oc/1.0.0/lib/valid/services/foundation5ElementModifier-debug", "fare/oc/1.0.0/lib/valid/services/validationManager-debug" ], function(require, exports, module) {
-    require("fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier-debug");
+define("fare/oc/1.0.0/lib/valid/services/index-debug", [ "fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier_modify-debug", "fare/oc/1.0.0/lib/valid/jcs-auto-validate-debug", "fare/oc/1.0.0/lib/valid/services/debounce-debug", "fare/oc/1.0.0/lib/valid/services/defaultErrorMessageResolver-debug", "fare/oc/1.0.0/lib/valid/services/foundation5ElementModifier-debug", "fare/oc/1.0.0/lib/valid/services/validationManager-debug" ], function(require, exports, module) {
+    require("fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier_modify-debug");
     require("fare/oc/1.0.0/lib/valid/services/debounce-debug");
     require("fare/oc/1.0.0/lib/valid/services/defaultErrorMessageResolver-debug");
     require("fare/oc/1.0.0/lib/valid/services/foundation5ElementModifier-debug");
     require("fare/oc/1.0.0/lib/valid/services/validationManager-debug");
 });
 
-define("fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier-debug", [ "fare/oc/1.0.0/lib/valid/jcs-auto-validate-debug" ], function(require, exports, module) {
+define("fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier_modify-debug", [ "fare/oc/1.0.0/lib/valid/jcs-auto-validate-debug" ], function(require, exports, module) {
     var app = require("fare/oc/1.0.0/lib/valid/jcs-auto-validate-debug");
     function Bootstrap3ElementModifierFn($log) {
         var reset = function(el) {
@@ -3994,11 +4102,11 @@ define("fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier-debug", [ "fa
        */
         makeValid = function(el) {
             var flag = isSelectORadio(el);
-            if (!flag) {
-                var frmGroupEl = findFormGroupElement(el), inputGroupEl;
-                if (frmGroupEl) {
-                    reset(frmGroupEl);
-                    inputGroupEl = findInputGroupElement(frmGroupEl[0]);
+            var frmGroupEl = findFormGroupElement(el), inputGroupEl;
+            if (frmGroupEl) {
+                reset(frmGroupEl);
+                inputGroupEl = findInputGroupElement(frmGroupEl[0]);
+                if (!flag) {
                     frmGroupEl.addClass("has-success " + (inputGroupEl.length > 0 ? "" : "has-feedback"));
                     if (addValidationStateIcons) {
                         var iconElText = '<span class="glyphicon glyphicon-ok form-control-feedback"></span>';
@@ -4009,16 +4117,16 @@ define("fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier-debug", [ "fa
                         var myElement = angular.element(el);
                         insertAfter(el, angular.element(iconElText));
                     }
-                } else {
-                    $log.error("Angular-auto-validate: invalid bs3 form structure elements must be wrapped by a form-group class");
                 }
+            } else {
+                $log.error("Angular-auto-validate: invalid bs3 form structure elements must be wrapped by a form-group class");
             }
         }, isSelectORadio = function(el) {
             var flag = false;
             if (el && el.length > 0) {
                 var jsEl = el[0];
                 var type = jsEl.type;
-                if (type == "radio" || type.indexOf("select") != -1) {
+                if (type == "radio" || type == "checkbox" || type.indexOf("select") != -1) {
                     flag = true;
                 }
             }
@@ -4038,14 +4146,15 @@ define("fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier-debug", [ "fa
        */
         makeInvalid = function(el, errorMsg) {
             var flag = isSelectORadio(el);
-            if (!flag) {
-                var frmGroupEl = findFormGroupElement(el), helpTextEl = angular.element('<div class="col-sm-3 help-block has-error error-msg"><small>' + errorMsg + "</small></div>"), inputGroupEl;
-                if (frmGroupEl) {
-                    reset(frmGroupEl);
-                    inputGroupEl = findInputGroupElement(frmGroupEl[0]);
-                    frmGroupEl.addClass("has-error " + (inputGroupEl.length > 0 ? "" : "has-feedback"));
-                    //insertAfter(inputGroupEl.length > 0 ? inputGroupEl : getCorrectElementToPlaceErrorElementAfter(el), helpTextEl);
-                    frmGroupEl.append(helpTextEl);
+            var frmGroupEl = findFormGroupElement(el), helpTextEl = angular.element('<div class="col-sm-3 help-block has-error error-msg"><small>' + errorMsg + "</small></div>"), inputGroupEl;
+            if (frmGroupEl) {
+                reset(frmGroupEl);
+                inputGroupEl = findInputGroupElement(frmGroupEl[0]);
+                //insertAfter(inputGroupEl.length > 0 ? inputGroupEl : getCorrectElementToPlaceErrorElementAfter(el), helpTextEl);
+                frmGroupEl.append(helpTextEl);
+                frmGroupEl.addClass("has-error " + (inputGroupEl.length > 0 ? "" : "has-feedback"));
+                if (!flag) {
+                    //如果不为radio，checkbox、或select
                     if (addValidationStateIcons) {
                         var iconElText = '<span class="glyphicon glyphicon-remove form-control-feedback"></span>';
                         if (inputGroupEl.length > 0) {
@@ -4054,9 +4163,9 @@ define("fare/oc/1.0.0/lib/valid/services/bootstrap3ElementModifier-debug", [ "fa
                         }
                         insertAfter(getCorrectElementToPlaceErrorElementAfter(el), angular.element(iconElText));
                     }
-                } else {
-                    $log.error("Angular-auto-validate: invalid bs3 form structure elements must be wrapped by a form-group class");
                 }
+            } else {
+                $log.error("Angular-auto-validate: invalid bs3 form structure elements must be wrapped by a form-group class");
             }
         }, getCorrectElementToPlaceErrorElementAfter = function(el) {
             var correctEl = el, elType = el[0].type ? el[0].type.toLowerCase() : "";
@@ -4156,7 +4265,8 @@ define("fare/oc/1.0.0/lib/valid/services/defaultErrorMessageResolver-debug", [ "
         pattern: "请确认输入信息符合规则 {0}",
         number: "请输入一个合法数字",
         url: "请输入正确的网址",
-        alphanumeric: "请输入字母或数字"
+        alphanumeric: "请输入字母或数字",
+        integer: "请输入正整数"
     };
     function DefaultErrorMessageResolverFn($q, $http) {
         var currentCulture = "en-gb", i18nFileRootPath = "js/angular-auto-validate/dist/lang", cultureRetrievalPromise, loadRemoteCulture = function(culture) {
