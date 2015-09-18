@@ -393,21 +393,33 @@ define("fare/oc/1.0.0/edit/controllers/index-debug", [ "fare/oc/1.0.0/edit/contr
 define("fare/oc/1.0.0/edit/controllers/eidtController-debug", [ "fare/oc/1.0.0/edit/controllers/controllers-debug" ], function(require, exports, module) {
     var controllers = require("fare/oc/1.0.0/edit/controllers/controllers-debug");
     //最外层controller
-    controllers.controller("EditController", [ "$scope", "FormData", "NEW_ADD_STR", "UPDATE_STR", "$http", function($scope, FormData, NEW_ADD_STR, UPDATE_STR, $http) {
+    controllers.controller("EditController", [ "$scope", "FormData", "NEW_ADD_STR", "UPDATE_STR", "$http", "validationManager", function($scope, FormData, NEW_ADD_STR, UPDATE_STR, $http, validationManager) {
         $scope.NEW_ADD_STR = NEW_ADD_STR;
         //新增action字符串标记
         $scope.UPDATE_STR = UPDATE_STR;
         //更新action字符串标记
         $scope.contextPath = FormData.contextPath;
         $scope.data = FormData;
+        $scope.orgData = angular.copy(FormData);
         //下面这部分是模拟测试数据之后会修改完善
         //当选择免费或则收费时触发的事件
         //表单提交
         $scope.submitForm = function(type) {
             console.info("保存保单数据 :type : " + type);
-            var flag = $scope.ocForm.$valid;
-            $scope.ocForm.lastMaintenanceDate.$dirty = true;
-            console.info("flag : " + flag);
+            var formElement = angular.element("#ocForm");
+            if (type == "reset") {
+                validationManager.resetForm(formElement);
+                FormData = angular.copy($scope.orgData);
+                $scope.data = FormData;
+            } else {
+                var flag = validationManager.validateForm(formElement);
+                console.info("form valid flag : " + flag);
+                var flag2 = $scope.ocForm.fareBasis.$valid;
+                console.info("基础运价 flag2 : " + flag2);
+                var flag3 = $scope.ocForm.lastMaintenanceDate.$valid;
+                console.info("截止日期 flag3 : " + flag3);
+                console.info("form valid flag : " + flag);
+            }
         };
         /*********这一部分属于页面所有的静态的select框开始部分**************/
         $scope.specifiedServiceFeeAppList = [ //适用于
