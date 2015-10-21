@@ -8,7 +8,7 @@
     <link type="text/css" rel="stylesheet" href="style.css"/>
     <script type="text/javascript" src="../lib/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="../lib/angular-1.4.js"></script>
-    <script type="text/javascript" src="./angular-.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-animate/angular-animate.js"></script>
     <script type="text/javascript" src="../lib/bootstrap.js"></script>
     <script type="text/javascript" src = "seajs/sea-debug.js"></script>
     <script type="text/javascript" src = "seajs/seajs-preload-debug.js"></script>
@@ -91,10 +91,6 @@
                             <li class="list-group-item">24*7 支持</li>
                             <li class="list-group-item">每年更新成本</li>
                         </ul>
-                    </div>
-
-                    <div class="col-sm-2">
-
                     </div>
 
                 </div>
@@ -401,7 +397,7 @@
                     <div class="row">
                         <div class="form-group col-sm-6">
                             <label  class="col-sm-3 control-label">大客户/特殊客户表</label>
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                                 <table class="table table-bordered table-striped table-condensed">
                                     <thead>
                                     <th>大客户编码</th>
@@ -426,7 +422,7 @@
                         <div class="col-lg-2"></div>
                         <div class="form-group col-sm-6">
                             <label  class="col-sm-3 control-label">指定客票表</label>
-                            <div class="col-sm-3">
+                            <div class="col-sm-4">
                                 <table class="table table-bordered table-striped table-condensed">
                                     <thead>
                                     <th>指定客票</th>
@@ -452,7 +448,7 @@
                     <div class="row">
                         <div class="form-group col-sm-6">
                             <label  class="col-sm-3 control-label">安全发布表</label>
-                            <div class="col-sm-8">
+                            <div class="col-sm-9">
                                 <table class="table table-bordered table-striped table-condensed">
                                     <thead>
                                     <th>旅行社</th>
@@ -764,7 +760,7 @@
                     <div class="row">
                         <div class="form-group col-sm-6">
                             <label  class="col-sm-3 control-label">星期</label>
-                            <div class="col-sm-5">
+                            <div class="col-sm-7">
                                 <label class="checkbox-inline">
                                     <input type="checkbox"  name="dayOfWeek" ng-model = "data.dayOfWeekShow.w1" value="option1"><small>一</small>
                                 </label>

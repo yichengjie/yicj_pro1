@@ -46,8 +46,8 @@ define(function(require, exports, module){
                     var myModel =  $("#myModal") ;
                     myModel.html(compileStr) ;
                     $compile(angular.element('body').find('#myModal'))(scope);
-                    $('#myModal').modal('show').css({
-                        "margin-top":"200px"});
+                    $('#myModal').modal({backdrop: 'static'}).modal('show').css({
+                        "margin-top":"70px"});
                 }) ;
                 scope.submitFunc = function () {
                     console.info(scope.rowData) ;
@@ -74,15 +74,14 @@ define(function(require, exports, module){
                 scope.title = title ;
                 var tplStr = attrs['tpl'] ;
                 element.bind('click', function () {
-
                     scope.rowData = angular.copy(scope.obj) ;
                     var template = _.template(tbRowHtml);
                     var compileStr = template({value: tplStr});
                     var myModel =  $("#myModal") ;
                     myModel.html(compileStr) ;
                     $compile(angular.element('body').find('#myModal'))(scope);
-                    $('#myModal').modal('show').css({
-                        "margin-top":"200px"});
+                    $('#myModal').modal({backdrop: 'static'}).modal('show').css({
+                        "margin-top":"70px"});
                 }) ;
                 scope.submitFunc = function () {
                     console.info(scope.rowData) ;
