@@ -660,7 +660,9 @@ define("fare/oc/1.0.0/edit/directives/tableDirective-debug", [ "fare/oc/1.0.0/ed
                     var myModel = $("#myModal");
                     myModel.html(compileStr);
                     $compile(angular.element("body").find("#myModal"))(scope);
-                    $("#myModal").modal("show").css({
+                    $("#myModal").modal({
+                        backdrop: "static"
+                    }).modal("show").css({
                         "margin-top": "70px"
                     });
                 });
@@ -696,7 +698,9 @@ define("fare/oc/1.0.0/edit/directives/tableDirective-debug", [ "fare/oc/1.0.0/ed
                     var myModel = $("#myModal");
                     myModel.html(compileStr);
                     $compile(angular.element("body").find("#myModal"))(scope);
-                    $("#myModal").modal("show").css({
+                    $("#myModal").modal({
+                        backdrop: "static"
+                    }).modal("show").css({
                         "margin-top": "70px"
                     });
                 });
