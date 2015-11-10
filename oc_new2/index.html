@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>oc编辑页面</title>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap/css/bootstrap.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/bootstrap-additions.css"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <script type="text/javascript" src="../lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../lib/angular-1.4.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-animate/angular-animate.js"></script>
+    <script type="text/javascript" src="../lib/bootstrap.js"></script>
+    <script type="text/javascript" src = "seajs/sea-debug.js"></script>
+    <script type="text/javascript" src = "seajs/seajs-preload-debug.js"></script>
+    <script type="text/javascript" src = "config/config.js"></script>
+</head>
+<body ng-controller="EditController">
+<input id="carrCode"  type="hidden" value='HW' />
+<input id="contextPath"  type="hidden" value='/angular_demo' />
+<input id="action"  type="hidden" value="add" />
+<input id="s7Id"  type="hidden" value="10011"/>
+    <!--模态框的页面dom-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    </div>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">新建服务费用</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li><a href="#">服务类型</a></li>
+                    <li><a href="#">费用</a></li>
+                    <li><a href="#">规则</a></li>
+                </ul>
+                <div class="nav navbar-nav navbar-right navBtnPad">
+                    <div class="btn-group" role="group" aria-label="...">
+                        <button type="button" class="btn btn-info">返回</button>
+                        <button type="button"  class="btn btn-success"  ng-click="submitForm('save')">保存</button>
+                        <button type="button"  class="btn btn-warning" ng-class="{true:'disabled'}[ocForm.$invalid]">保存并发布</button>
+                        <button type="button"  class="btn btn-danger" ng-click="submitForm('reset')">重置表单</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div  class = "container-fluid editCtrlPadTop">
+        <!-- 页面第一部分开始 -->
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h5 class="panel-title ">附加服务</h5>
+            </div>
+            <div class="panel-body">
+
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                            <div class="input-group">
+                                <div class="input-group-addon">附加服务</div>
+                                <input type="text" class="form-control" id="exampleInputAmount" placeholder="必填项，请选择你需要的附加服务。">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <ul class="list-group">
+                            <li class="list-group-item">免费域名注册</li>
+                            <li class="list-group-item">免费 Window 空间托管</li>
+                            <li class="list-group-item">图像的数量</li>
+                            <li class="list-group-item">24*7 支持</li>
+                            <li class="list-group-item">每年更新成本</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2">
+                        <ul class="list-group">
+                            <li class="list-group-item">免费域名注册</li>
+                            <li class="list-group-item">免费 Window 空间托管</li>
+                            <li class="list-group-item">图像的数量</li>
+                            <li class="list-group-item">24*7 支持</li>
+                            <li class="list-group-item">每年更新成本</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-2">
+                        <ul class="list-group">
+                            <li class="list-group-item">免费域名注册</li>
+                            <li class="list-group-item">免费 Window 空间托管</li>
+                            <li class="list-group-item">图像的数量</li>
+                            <li class="list-group-item">24*7 支持</li>
+                            <li class="list-group-item">每年更新成本</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-sm-2">
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!--页面第一部分结束 -->
+        <!--页面第一部分结束 -->
+        <form name="ocForm" id = "ocForm" class="form-horizontal" role="form"   novalidate="novalidate">
+            <!-- 页面第二部分开始 -->
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h5 class="panel-title ">
+                        <small>日期&nbsp;&nbsp;描述</small>
+                    </h5>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-sm-6" >
+                            <label  class="col-sm-3 control-label"></small>生效日期</label>
+                            <div class="col-sm-5">
+                                <input type="text"
+                                       name="firstMaintenanceDate"
+                                       class="form-control input-sm"
+                                       ng-model="data.firstMaintenanceDate" data-date-format="yyyy-MM-dd" data-date-type="number"
+                                       data-min-date="today" data-max-date="2016-12-12" data-autoclose="1"
+                                       bs-datepicker ng-required="true" placeholder="必填项">
+                            </div>
+                        </div>
+
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">截止日期</label>
+                            <div class="col-sm-5">
+                                <input type="text"
+                                       name="lastMaintenanceDate"
+                                       class="form-control input-sm"
+                                       ng-model="data.lastMaintenanceDate"
+                                       data-date-format="yyyy-MM-dd"
+                                       data-date-type="number"
+                                       data-min-date="today"
+                                       data-max-date="2016-12-12"
+                                       data-autoclose="1"
+                                       ng-required="true"
+                                       bs-datepicker placeholder="必填项">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label"><small>基础运价</small></label>
+                            <div class="col-sm-5">
+                                <input type="text"   name="fareBasis" alphanumeric="true" ng-maxlength="20"
+                                       ng-model="data.fareBasis" class="form-control input-sm"  placeholder="字母或数字">
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">上传图片</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control input-sm"  placeholder="暂时未开通">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">描述</label>
+                            <div class="col-sm-9">
+                                <textarea  ng-model="data.description" class="form-control input-sm" rows="3"></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h5 class="panel-title "><small>费用</small></h5>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">费用</label>
+                            <div class="col-sm-5">
+                                <select ng-model="data.noChargeNotAvailable" class="form-control input-sm"
+                                        ng-options="a.value as a.name for a in noChargeNotAvailableList">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">里程范围</label>
+                            <div class="col-sm-2">
+                                <input type="text" ng-model="data.mileageMinimum" class="form-control input-sm"  placeholder="仅输入数字">
+                            </div>
+                            <div class="span_line_link"><span class="glyphicon glyphicon-resize-horizontal pt_tip text-success"></span></div>
+                            <div class="col-sm-2">
+                                <input type="text" ng-model="data.mileageMaximum" class="form-control input-sm"  placeholder="仅输入数字">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">适用于</label>
+                            <div class="col-sm-5">
+                                <select ng-model="data.specifiedServiceFeeApp"
+                                        class="form-control input-sm"
+                                        ng-options="o.value as o.name for o in specifiedServiceFeeAppList">
+                                </select>
+
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">总里程</label>
+                            <div class="col-sm-5">
+                                <input type="text" ng-model="data.specifiedServiceFeeMileage" class="form-control input-sm"  placeholder="仅输入数字">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">包含扣除</label>
+                            <div class="col-sm-5">
+                                <select ng-model="data.specServiceFeeColSub" class="form-control input-sm"
+                                        ng-disabled="data.statusDes=='3'"
+                                        ng-options="a.value as a.name for a in specServiceFeeColSubList">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">或/和</label>
+                            <div class="col-sm-5">
+                                <label class="radio-inline">
+                                    <input type="radio" name="specSevFeeAndOrIndicator" ng-model="data.specSevFeeAndOrIndicator" value=""> 或
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="specSevFeeAndOrIndicator"  ng-model="data.specSevFeeAndOrIndicator" value="A"> 和
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">净价/销售价</label>
+                            <div class="col-sm-5">
+                                <select ng-model="data.specServiceFeeNetSell" class="form-control input-sm"
+                                        ng-disabled="data.statusDes=='3'"
+                                        ng-options="a.value as a.name for a in specServiceFeeNetSellList">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">检查可用性</label>
+                            <div class="col-sm-5">
+                                <label class="radio-inline">
+                                    <input type="radio" name="availability" ng-model="data.availability"  value="N">是
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="availability" ng-model="data.availability"  value="Y"> 否
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-2 control-label">金额
+                            </label>
+                            <div class="col-sm-8">
+                                <table class="table table-condensed table-bordered table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>销售地类型</th>
+                                        <th>销售地代码</th>
+                                        <th>金额</th>
+                                        <th>货比类型</th>
+                                        <th>操作<span class="pdr10"></span>
+                                            <tb-add title="新增金额信息" tpl = "tb170.html" list = "data.list170VO"></tb-add>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="l in data.list170VO">
+                                        <th ng-bind="l['saleGeographicPointType']"></th>
+                                        <td ng-bind="l['saleGeographicPoint']"></td>
+                                        <td ng-bind="l['specFeeAmount']"></td>
+                                        <td ng-bind="l['specFeeCurrency']"></td>
+                                        <td>
+                                            <tb-update title="修改金额信息" tpl = "tb170.html" obj = "l" list = "data.list170VO"></tb-update>
+                                            <span class="pdr10"></span>
+                                            <tb-delete myindex = "$index" list="data.list170VO"></tb-delete>
+                                        </td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <!--页面第二部分结束 -->
+
+            <!-- 页面第三部分开始 -->
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h5 class="panel-title ">
+                        <small>优先级序号</small>
+                    </h5>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">优先级序号</label>
+                            <div class="col-sm-5">
+                                <input type="text" ng-model="data.sequenceNumber" class="form-control input-sm"  placeholder="序号越小优先级越高">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h5 class="panel-title ">
+                        <small>旅客</small>
+                    </h5>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">旅客类型</label>
+                            <div class="col-sm-5">
+                               <select ng-model ="data.passengerTypeCode" class="form-control input-sm">
+                                   <option>选择</option>
+                               </select>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">年龄范围</label>
+                            <div class="col-sm-2">
+                                <input type="text" ng-model="data.minPassengerAge" class="form-control input-sm"  placeholder="开始">
+                            </div>
+                            <div class="span_line_link"><span class="glyphicon glyphicon-resize-horizontal pt_tip text-success"></span></div>
+                            <div class="col-sm-2">
+                                <input type="text" ng-model="data.maxPassengerAge" class="form-control input-sm" placeholder="结束">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">个数范围</label>
+                            <div class="col-sm-2">
+                                <input type="text" ng-model="data.firstPassengerOccurrence" class="form-control input-sm"  placeholder="开始">
+                            </div>
+                            <div class="span_line_link"><span class="glyphicon glyphicon-resize-horizontal pt_tip text-success"></span></div>
+                            <div class="col-sm-2">
+                                <input type="text" ng-model="data.lastPassengerOccurrence" class="form-control input-sm"  placeholder="结束">
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">常旅客状态</label>
+                            <div class="col-sm-5"><!--这个是从数据库中查询出来的-->
+                                <select class="form-control input-sm">
+                                    <option>选择</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">客户积分范围</label>
+                            <div class="col-sm-2">
+                                <input type="text" ng-model="data.customerIndexScoreMinimum" class="form-control input-sm"  placeholder="开始">
+                            </div>
+                            <div class="span_line_link"><span class="glyphicon glyphicon-resize-horizontal pt_tip text-success"></span></div>
+                            <div class="col-sm-2">
+                                <input type="text" ng-model="data.customerIndexScoreMaxmum" class="form-control input-sm"  placeholder="结束">
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">旅行编码</label>
+                            <div class="col-sm-5">
+                                <input type="text" ng-model="data.tourCode" class="form-control input-sm"  placeholder="数字或字母">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">公布私有</label>
+                            <div class="col-sm-5">
+                               <label class="radio-inline">
+                                   <input type="radio" ng-model="data.publicPrivateIndicator" name = "publicPrivateIndicator" value = "" />公布
+                               </label>
+                                <label class="radio-inline">
+                                    <input type="radio"  ng-model="data.publicPrivateIndicator" name = "publicPrivateIndicator" value="P"/>私有
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">大客户/特殊客户表</label>
+                            <div class="col-sm-4">
+                                <table class="table table-bordered table-striped table-condensed">
+                                    <thead>
+                                    <th>大客户编码</th>
+                                    <th>操作
+                                        <span class="pdl10"></span>
+                                        <tb-add title="新增大客户信息" tpl = "tb172.html" list = "data.list172VO"></tb-add>
+                                    </th>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="l in data.list172VO">
+                                        <td ng-bind="l.accountCode"></td>
+                                        <td>
+                                            <tb-update title="修改大客户信息" tpl = "tb172.html" obj = "l" list = "data.list172VO"></tb-update>
+                                            <span class="pdr10"></span>
+                                            <tb-delete myindex = "$index" list="data.list172VO"></tb-delete>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">指定客票表</label>
+                            <div class="col-sm-4">
+                                <table class="table table-bordered table-striped table-condensed">
+                                    <thead>
+                                    <th>指定客票</th>
+                                    <th>操作<span class="pdr10"></span>
+                                        <tb-add title="新增指定客票信息" tpl = "tb173Ticket.html" list = "data.list173TicketVO"></tb-add>
+                                    </th>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="l in data.list173TicketVO">
+                                        <td ng-bind="l.ticketDesignator"></td>
+                                        <td>
+                                            <tb-update title="修改指定客票信息" tpl = "tb173Ticket.html" obj = "l" list = "data.list173TicketVO"></tb-update>
+                                            <span class="pdr10"></span>
+                                            <tb-delete myindex = "$index" list="data.list173TicketVO"></tb-delete>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-2 control-label">安全发布</label>
+                            <div class="col-sm-10">
+                                <table class="table table-bordered table-striped table-condensed">
+                                    <thead>
+                                    <th>旅行社</th>
+                                    <th>航空公司<br>分销商</th>
+                                    <th>职责<br>功能码</th>
+                                    <th>区域<br>类型</th>
+                                    <th>区域<br>代码</th>
+                                    <th>发布对<br>象类型</th>
+                                    <th>发布对<br>象代码</th>
+                                    <th>权限</th>
+                                    <th>操作<span class="pdr10"></span>
+                                        <tb-add title="新增安全发布信息" tpl = "tb183.html" list = "data.list183VO"></tb-add>
+                                    </th>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="l in data.list183VO">
+                                            <td ng-bind="l.travelAgency"></td>
+                                            <td ng-bind="l.carrierGds"></td>
+                                            <td ng-bind="l.dutyFunctionCode"></td>
+                                            <td ng-bind="l.geographicSpecificationType"></td>
+                                            <td ng-bind="l.geographicSpecification"></td>
+                                            <td ng-bind="l.codeType"></td>
+                                            <td ng-bind="l.code"></td>
+                                            <td ng-bind="l.viewBookTkt"></td>
+                                            <td>
+                                                <tb-update  title="修改安全发布信息" tpl = "tb183.html" obj = "l" list = "data.list183VO"></tb-update>
+                                                <span class="pdr10"></span>
+                                                <tb-delete myindex = "$index" list="data.list183VO"></tb-delete>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h5 class="panel-title ">
+                        <small>舱位</small>
+                    </h5>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">服务等级</label>
+                            <div class="col-sm-5">
+                                <select ng-model="data.cabin" class="form-control input-sm"
+                                        ng-disabled="data.statusDes=='3'"
+                                        ng-options="o.value as o.name for o in cabinList">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">订座属性表</label>
+                            <div class="col-sm-5">
+                                <input type="email" class="form-control input-sm"  placeholder="表格">
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">升舱到服务等级</label>
+                            <div class="col-sm-5">
+                                <select ng-model="data.upgradeToCabin" class="form-control input-sm"
+                                        ng-disabled="data.statusDes=='3'"
+                                        ng-options="o.value as o.name for o in cabinList">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">升舱属性表</label>
+                            <div class="col-sm-5">
+                                <input type="email" class="form-control input-sm"  placeholder="表格">
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h5 class="panel-title ">
+                        <small>退款相关</small>
+                    </h5>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">退/改</label>
+                            <div class="col-sm-5">
+                                <select ng-model="data.indicatorReissueRefund"  class = "form-control input-sm"
+                                        ng-disabled="data.statusDes=='3'"
+                                        ng-options="d.value as d.name for d in indicatorReissueRefundList" >
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">退款形式</label>
+                            <div class="col-sm-5">
+                                <select ng-model="data.formOfRefund"  class = "form-control input-sm"
+                                        ng-disabled="data.statusDes=='3'"
+                                        ng-options="d.value as d.name for d in formOfRefundList" >
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">(有无)代理费</label>
+                            <div class="col-sm-5">
+                                <label class="radio-inline">
+                                    <input type="radio" name="indicatorComission" ng-model="data.indicatorComission" value="Y"> 是
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="indicatorComission"  ng-model="data.indicatorComission" value="N"> 否
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">是否联程</label>
+                            <div class="col-sm-5">
+                                <label class="radio-inline">
+                                    <input type="radio" name="indicatorInterline" ng-model="data.indicatorInterline" value="Y"> 是
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="indicatorInterline"  ng-model="data.indicatorInterline" value="N"> 否
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h5 class="panel-title ">
+                        <small>旅行日期</small>
+                    </h5>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">开始日期</label>
+                            <div class="col-sm-5">
+                                <input type="text"
+                                       name="travelStartDate"
+                                       class="form-control input-sm"
+                                       ng-model="data.travelStartDate" data-date-format="yyyy-MM-dd" data-date-type="number"
+                                       data-min-date="today" data-max-date="2016-12-12" data-autoclose="1"
+                                       bs-datepicker ng-required="true" placeholder="必填项">
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">结束日期</label>
+                            <div class="col-sm-5">
+                                <input type="text"
+                                       name="travelEndDate"
+                                       class="form-control input-sm"
+                                       ng-model="data.travelEndDate" data-date-format="yyyy-MM-dd" data-date-type="number"
+                                       data-min-date="today" data-max-date="2016-12-12" data-autoclose="1"
+                                       bs-datepicker ng-required="true" placeholder="必填项">
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h5 class="panel-title ">
+                        <small>运价规则</small>
+                    </h5>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">是否含税费</label>
+                            <div class="col-sm-5">
+                                <label class="radio-inline">
+                                    <input type="radio" name="taxApplication" ng-model="data.taxApplication" value="Y"> 是
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="taxApplication"  ng-model="data.taxApplication" value=""> 否
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">税费</label>
+                            <div class="col-sm-5">
+                                <input type="email" ng-model="data.tariff" class="form-control input-sm"  placeholder="数字">
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">规则</label>
+                            <div class="col-sm-5">
+                                <input type="email" ng-model="data.rule" class="form-control input-sm"  placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">指定客票表</label>
+                            <div class="col-sm-5">
+                                <input type="email" class="form-control input-sm"  placeholder="表格">
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">客票舱位表</label>
+                            <div class="col-sm-5">
+                                <input type="email" class="form-control input-sm"  placeholder="表格">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h5 class="panel-title ">
+                        <small>服务应用范围</small>
+                    </h5>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">与机票同时出票</label>
+                            <div class="col-sm-5">
+                                <label class="radio-inline">
+                                    <input type="radio" name="advancedPurchaseTktIssue" ng-model="data.advancedPurchaseTktIssue" value=""> 是
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="advancedPurchaseTktIssue"  ng-model="data.advancedPurchaseTktIssue" value="X"> 否
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">提前购票时间</label>
+                            <div class="col-sm-3">
+                                <input type="text" integer="true" ng-model="data.advancedPurchasePeriod" class="form-control input-sm"  placeholder="">
+                            </div>
+                            <div class="col-sm-2">
+                                <select ng-model="data.advancedPurchaseUnit" class="form-control input-sm"
+                                        ng-disabled="data.statusDes=='3'"
+                                        ng-options="d.value as d.name for d in geoSpecExceptionStopUnitList" >
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">机型</label>
+                            <div class="col-sm-5">
+                                <input type="email" class="form-control input-sm"  placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">开始时刻</label>
+                            <div class="col-sm-5">
+                                <input type="text" ng-model="data.startTime" class="form-control input-sm"  placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">结束时刻</label>
+                            <div class="col-sm-5">
+                                <input type="text" ng-model="data.stopTime" class="form-control input-sm"  placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">应用范围</label>
+                            <div class="col-sm-5">
+                                <select ng-model="data.timeApplication"  class = "form-control input-sm"
+                                        ng-disabled="data.statusDes=='3'" ng-required="true"
+                                        ng-options="d.value as d.name for d in timeApplicationList" >
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-2 control-label">星期</label>
+                            <div class="col-sm-7">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox"  name="dayOfWeek" ng-model = "data.dayOfWeekShow.w1" value="option1"><small>一</small>
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox"  name="dayOfWeek" ng-model = "data.dayOfWeekShow.w2" value="option2"><small>二</small>
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="dayOfWeek" ng-model = "data.dayOfWeekShow.w3" value="option3"><small>三</small>
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox"  name="dayOfWeek" ng-model = "data.dayOfWeekShow.w4" value="option1"><small>四</small>
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox"  name="dayOfWeek" ng-model = "data.dayOfWeekShow.w5" value="option2"><small>五</small>
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox"  name="dayOfWeek" ng-model = "data.dayOfWeekShow.w6" value="option3"><small>六</small>
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input  ng-required="true" type="checkbox" name="dayOfWeek" ng-model = "data.dayOfWeekShow.w7" value="option3"><small>日</small>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">航班号</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control input-sm"  placeholder="表格">
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h5 class="panel-title ">
+                        <small>地理信息</small>
+                    </h5>
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">区域限制</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control input-sm"  placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">区域/部分/全程</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control input-sm"  placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">指定区域</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control input-sm"  placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">经停时间</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control input-sm"  placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">经停类型</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control input-sm"  placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">区域1</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control input-sm"  placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">区域2</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control input-sm"  placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                        <div class="form-group col-sm-6">
+                            <label  class="col-sm-3 control-label">区域3</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control input-sm"  placeholder="">
+                            </div>
+                        </div>
+                        <div class="col-lg-2"></div>
+                    </div>
+                </div>
+            </div>
+            <!--页面第三部分结束 -->
+        </form>
+
+
+    </div>
+</body>
+</html>
