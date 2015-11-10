@@ -62,7 +62,8 @@ var trStt ='<%if("tb170.html"==value){%>'+
     '  </div>'+
     '</div>'+
     '<%}%>' ;
-var app = angular.module("app",[]) ;
+
+var app = angular.module("app",[]);
 app.controller('IndexController', function ($scope) {
     $scope.data = {
         list170VO:[
