@@ -20,6 +20,7 @@ app.controller('IndexController',function($scope){
 }) ;//controller½áÊø
 
 
+
 app.directive('showHideTable',function(){
     return {
         restrict: 'AE',
