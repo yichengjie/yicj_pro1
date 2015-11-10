@@ -3,7 +3,7 @@
  */
 var app = angular.module('app',[]) ;
 app.controller('IndexController', function ($scope) {
-    $scope.data ={name:'yicj',info:'',serviceType:'',addr:''} ;
+    $scope.data ={name:'yicj',info:'',serviceType:'',addr:'',dept:''} ;
 
     $scope.serviceTypeList = [
         {name:'选择',value:''},{name:'类型F',value:'F'},{name:'类型M',value:'M'}
