@@ -1,5 +1,5 @@
 // 重置表单
-$().ready(function() {
+/*$().ready(function() {
     var validator = $("#signupForm").validate({
         submitHandler:function(form){
             alert("submitted");
@@ -12,6 +12,17 @@ $().ready(function() {
         validator.resetForm();
     });
 
-});/**
+});*/
+
+$("#myform").validate({
+
+    meta:"validate",
+
+    submitHandler:function() {
+        alert("Submitted!") }
+
+})
+
+/**
  * Created by Administrator on 2015/11/5.
  */
