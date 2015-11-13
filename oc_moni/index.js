@@ -10,7 +10,7 @@ app.controller('IndexController', function ($scope) {
     ] ;
 
     $scope.changeServiceType =function (){
-        console.info('当前的serviceType : ' + $scope.data.serviceType) ;
+        //console.info('当前的serviceType : ' + $scope.data.serviceType) ;
     }
 
 }) ;
@@ -19,34 +19,39 @@ app.controller('IndexController', function ($scope) {
 app.directive('force',function(){
     return  {
         restrict:'E',//restrict
+        replace:true,
         scope:{
-            type:'='
+            serviceType:'='
         },
-        template:'<div ng-show="showFunc()"><span ng-transclude=""></span></div>',
+        template:function(elem,attr){
+            console.info(attr['hello']) ;
+            return '<div ng-show="showFunc()"><span ng-transclude=""></span></div>' ;
+        },
         transclude:true,
         controller: function ($scope,$element,$attrs) {
             var typeList = [] ;
-            this.addForce = function(type){
-                typeList.push(type) ;
-            }
-            this.addForceList = function(arr){
-                typeList = arr ;
-            }
             $scope.typeList= typeList ;
             $scope.showFunc = function(){
                 var flag = true;
-                if($scope.type&&$scope.type.length>0){
-                   flag= _.contains(typeList,$scope.type) ;
+                if($scope.serviceType&&$scope.serviceType.length>0){
+                   flag= _.contains($scope.typeList,$scope.serviceType) ;
                 }
                 return flag ;
             }
         },
         link: function (scope,elem,attr) {
-
+            var ocshow = attr['ocshow'] ;
+            var info = [] ;
+            if(ocshow&&ocshow.length>0){
+                info = ocshow.split(',') ;
+            }
+            scope.typeList = info ;
         }
     } ;
 }) ;
 
+
+/*
 app.directive('ocshow', function () {
     return{
         restrict:'A',
@@ -61,8 +66,8 @@ app.directive('ocshow', function () {
         }
     } ;
 }) ;
-
-
+*/
+/*
 app.directive('ocm', function () {
     return{
         restrict:'A',
@@ -81,5 +86,5 @@ app.directive('ocf', function () {
             ctrl.addForce('F') ;
         }
     } ;
-}) ;
+}) ;*/
 
