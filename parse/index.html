@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+
+</head>
+<body ng-app="app">
+
+<div ng-controller="IndexController">
+
+    <form name="testForm">
+        <input type="text"  name="inputs" hello ng-model="data.name"/>
+
+
+
+
+        <span ng-show="testForm.inputs.$error.test">good</span>
+        <span ng-show="!testForm.inputs.$error.test">bad</span>
+        <div>校验通过: {{testForm.inputs.$valid}}</div>
+        <div>校验无效: {{testForm.inputs.$invalid}}</div>
+        <div>{{data.name}}</div>
+    </form>
+
+
+</div>
+
+
+<script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
