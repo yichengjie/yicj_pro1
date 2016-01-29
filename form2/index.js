@@ -12,7 +12,7 @@ app.controller('IndexController',['$scope',function($scope){
 
 
        console.info($scope.user) ;
-        alert("±£¥Ê ˝æ›!");
+        alert("‰∏∫‰ªÄ‰πàÊúâ‰∏≠Êñá‰π±Á†Å!");
     }
 
 }]) ;
