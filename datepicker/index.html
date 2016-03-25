@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!--
+    <link type="text/css" rel="stylesheet" href="lib/jquery-ui.css">
+    <link type="text/css" rel="stylesheet" href="lib/jquery.ui.slider.css">
+    <link type="text/css" rel="stylesheet" href="lib/jquery_ui.datepicker-modify.css">
+
+    <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="lib/jquery_ui.js"></script>
+    <script type="text/javascript" src="lib/jquery_ui.datepicker-zh-CN.js"></script>
+    -->
+    <link type="text/css" rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="../node_modules/bootstrap_datapicker/css/bootstrap-datepicker3.css">
+    <script type="text/javascript" src="lib/jquery.js"></script>
+    <script type="text/javascript" src="../node_modules/bootstrap_datapicker/js/bootstrap-datepicker.js"></script>
+    <script type="text/javascript" charset="UTF-8" src="../node_modules/bootstrap_datapicker/locales/bootstrap-datepicker.zh-CN.min.js"></script>
+    <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+</head>
+<body ng-app="app" style="padding-top: 100px;">
+    <div class="container">
+        <form ng-controller="IndexController">
+            <input  ng-model="effDate" type="text" data-date-format="yyyy-mm-dd"  datepicker/>
+            {{effDate}}
+        </form>
+    </div>
+
+
+
+</body>
+</html>

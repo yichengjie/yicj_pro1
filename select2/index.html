@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet" href="../lib/select2/css/select2.css">
+</head>
+<body ng-app="app">
+
+
+<div ng-controller="IndexController">
+    <select ng-model = "data.name" class="js-example-basic-single" style="width: 200px;"
+            ng-change ="hello()"
+            ng-options="o.value as o.name for o in list1" >
+    </select>
+</div>
+
+
+<!--
+<select class="js-example-basic-single" style="width: 200px;">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+</select>
+-->
+
+<script type="text/javascript" src="../lib/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="../lib/select2/js/select2.full.js"></script>
+<script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</body>
+</html>

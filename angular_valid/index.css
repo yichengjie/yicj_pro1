@@ -1,0 +1,12 @@
+body{
+    padding-top: 50px;
+}
+.errorContainer{
+    overflow: hidden;
+    height: 30px;
+}
+.errorContainer span{
+    display: inline-block;
+    height: 30px;
+    width: 400px;
+}
