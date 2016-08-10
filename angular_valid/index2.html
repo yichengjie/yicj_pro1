@@ -9,16 +9,21 @@
 <body ng-app="app">
     <div class="container" ng-controller="IndexController">
         <input type="text" name ="email" ng-model="data.email" /><br/>
-        {{::data.email}}<br/>
+        {{::data.email}}----
+        <span bindonce="data">
+           <span bo-text="data.email"></span>
+        </span>
+        <br/>
         <button type="button" ng-click="submitMyForm()">提交</button>
     </div>
     <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
-    <script type="text/javascript" src="../lib/angular-1.4.js"></script>
+    <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-bindonce/bindonce.js"></script>
     <script type="text/javascript">
-        var app = angular.module('app',[]) ;
+        var app = angular.module('app',['pasvaz.bindonce']) ;
         app.controller('IndexController', function ($scope) {
             $scope.data = {
-                email:'hello '
+                email:'bindonce'
             } ;
             setTimeout(function(){
                 console.info('modify .... ') ;
@@ -26,7 +31,6 @@
                     $scope.data.email = "yicj" ;
                 }) ;
             },1000) ;
-
             $scope.submitMyForm = function () {
                 console.info($scope.data) ;
             }
