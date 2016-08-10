@@ -1,0 +1,24 @@
+{
+  "name": "yicj_pro1",
+  "homepage": "https://github.com/yichengjie/yicj_pro1",
+  "authors": [
+    "yichengjie <626659321@qq.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-auto-validate": "~1.18.16",
+    "angular-motion": "~0.4.2",
+    "angular-translate-loader-static-files": ">= 2.4.2",
+    "at-table": "~1.0.5",
+    "ngAnimate": "*"
+  }
+}
