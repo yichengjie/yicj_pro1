@@ -2,13 +2,15 @@
  * Created by yicj on 2016/1/29.
  */
 var app = angular.module('app',[]) ;
-app.controller('IndexController', function ($scope,$log) {
-    $log.info('hello world ......') ;
-    var data = {
-        email:''
+app.controller('IndexController', function ($scope) {
+    $scope.data = {
+        email:'hello '
     } ;
-    $scope.data = data ;
+
+
+
     $scope.submitMyForm = function () {
+        console.info($scope.data) ;
         var flag = $scope.myform.$valid ;
         $scope.myform.email.$dirty = true ;
         if(flag){
@@ -19,7 +21,3 @@ app.controller('IndexController', function ($scope,$log) {
     }
 }) ;
 
-//启动angular
-angular.element(document).ready(function () {
-    angular.bootstrap(document,['app']) ;
-}) ;

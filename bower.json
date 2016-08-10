@@ -19,6 +19,9 @@
     "angular-motion": "~0.4.2",
     "angular-translate-loader-static-files": ">= 2.4.2",
     "at-table": "~1.0.5",
-    "ngAnimate": "*"
+    "ngAnimate": "*",
+    "bootstrap": "^3.3.7",
+    "angular-bindonce": "^0.3.3",
+    "angular": "1.4.5"
   }
 }
