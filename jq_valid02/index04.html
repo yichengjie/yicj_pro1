@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!---->
+
+    <link type="text/css" rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css"/>
+
+    <link type="text/css" rel="stylesheet" href="../node_modules/jquery_validation/css/screen.css"/>
+    <script type="text/javascript" src="../lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../node_modules/jquery_validation/jquery.validate.js"></script>
+    <script type="text/javascript" src="../node_modules/jquery_validation/jquery.metadata.js"></script>
+    <script type="text/javascript" src="../node_modules/jquery_validation/localization/messages_zh.js"></script>
+</head>
+<body style="padding-top: 100px;">
+    <div class="container">
+        <!--
+        <form id="signupForm">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="text" class="form-control required" id="exampleInputEmail1" placeholder="Email">
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+
+            <div class="form-group">
+                <label>男</label>
+                <input  type="radio" id="gender_male" value="m" name="gender" class="{required:true}" />
+                <label>女</label>
+                <input  type="radio" id="gender_female" value="f" name="gender"/>
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" class="checkbox" id="agree" name="agree" class="{required:true}" />
+            </div>
+
+            <div class="form-group">
+                <input type="checkbox" class="checkbox" id="spam_email" value="email" name="spam[]" class="{required:true, minlength:2}" />
+            </div>
+            <div class="form-group">
+                <input class="submit" type="submit" value="Submit"/>
+                <input class="reset" type="reset" id="reset" value="reset">
+            </div>
+
+            <div class="form-group">
+                <select id="jungle" name="jungle" title="Please select something!" class="{required:true}">
+                    <option value=""></option>
+                    <option value="1">Buga</option>
+                    <option value="2">Baga</option>
+                    <option value="3">Oi</option>
+                </select>
+            </div>
+        </form>
+        -->
+        <form id="myform">
+            <input type="text"
+                   name="email" class="{validate:{ required:true,email:true }}" />
+
+            <input type="submit"
+                   value="Submit" />
+        </form>
+    </div>
+</body>
+<script type="text/javascript" src="index04.js"></script>
+</html>

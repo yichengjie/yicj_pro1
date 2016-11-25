@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link type="text/css" rel="stylesheet"  href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link type="text/css" rel="stylesheet" href="index.css" />
+</head>
+<body ng-app="app">
+    <div class="container" ng-controller="IndexController">
+        <input type="text" name ="email" ng-model="data.email" /><br/>
+        {{::data.email}}----
+        <span bindonce="data">
+           <span bo-text="data.email"></span>
+        </span>
+        <br/>
+        <button type="button" ng-click="submitMyForm()">提交</button>
+    </div>
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-bindonce/bindonce.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('app',['pasvaz.bindonce']) ;
+        app.controller('IndexController', function ($scope) {
+            $scope.data = {
+                email:'bindonce'
+            } ;
+            setTimeout(function(){
+                console.info('modify .... ') ;
+                $scope.$apply(function(){
+                    $scope.data.email = "yicj" ;
+                }) ;
+            },1000) ;
+            $scope.submitMyForm = function () {
+                console.info($scope.data) ;
+            }
+        }) ;
+    </script>
+</body>
+</html>
